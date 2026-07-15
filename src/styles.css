@@ -780,7 +780,7 @@ button {
 }
 
 .site-footer {
-  padding: 30px 0;
+  padding: 48px 0;
   color: #f3f3ef;
   background: var(--ink);
   border-top: 1px solid var(--line-light);
@@ -1074,6 +1074,10 @@ button {
 
   .footer-github span {
     display: none;
+  }
+
+  .site-footer {
+    padding: 36px 0;
   }
 }
 
