@@ -173,5 +173,5 @@ BUILDER  /  MD. RAKIB
 ```
 
 <p align="center">
-  <sub>Built from Dhaka for the open internet.</sub>
+  <sub>Built from Khulna for the open internet.</sub>
 </p>

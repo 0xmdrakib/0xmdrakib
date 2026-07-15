@@ -4,20 +4,12 @@ import {
   ArrowUpRight,
   Bot,
   Boxes,
-  Check,
   CircleDot,
   Github,
-  Globe2,
-  Mail,
   Menu,
-  Network,
-  Radio,
   Search,
-  ShieldCheck,
   Sparkles,
-  SquareTerminal,
   X,
-  Zap,
 } from "lucide-react";
 import {
   projectCategories,
@@ -25,8 +17,6 @@ import {
   type Project,
   type ProjectFilter,
 } from "./data/projects";
-
-const capabilityIcons = [Globe2, Mail, Network, ShieldCheck, SquareTerminal, Radio];
 
 function ExternalAction({
   href,
@@ -75,7 +65,6 @@ function Header() {
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="#ecosystem">Ecosystem</a>
-        <a href="#flagship">Flagship</a>
         <a href="#profile">Profile</a>
       </nav>
 
@@ -105,9 +94,6 @@ function Header() {
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <a href="#ecosystem" onClick={() => setMenuOpen(false)}>
             Ecosystem
-          </a>
-          <a href="#flagship" onClick={() => setMenuOpen(false)}>
-            Flagship
           </a>
           <a href="#profile" onClick={() => setMenuOpen(false)}>
             Profile
@@ -160,7 +146,7 @@ function Hero() {
             <span>Independent product headquarters</span>
             <span className="eyebrow-status">
               <i />
-              Dhaka / Building globally
+              Khulna / Building globally
             </span>
           </div>
           <h1 id="hero-title">RakibHQ</h1>
@@ -376,183 +362,12 @@ function EcosystemRegistry() {
   );
 }
 
-function FlagshipSection() {
-  const project = projects[0];
-
-  return (
-    <section className="flagship section-band" id="flagship">
-      <div className="page-shell">
-        <div className="flagship-heading">
-          <span className="section-number section-number--light">
-            02 / FLAGSHIP SYSTEM
-          </span>
-          <div>
-            <h2>AgentDomain</h2>
-            <span>Identity, assembled.</span>
-          </div>
-        </div>
-
-        <div className="flagship-grid">
-          <div className="flagship-copy">
-            <p className="flagship-intro">{project.description}</p>
-            <p className="flagship-value">{project.value}</p>
-            <div className="flagship-actions">
-              <ExternalAction href={project.liveUrl} variant="primary">
-                Launch AgentDomain
-              </ExternalAction>
-              <ExternalAction href={project.repoUrl} variant="quiet">
-                Inspect source
-              </ExternalAction>
-            </div>
-          </div>
-
-          <div className="identity-map" aria-label="AgentDomain identity stack">
-            {project.capabilities.map((capability, index) => {
-              const Icon = capabilityIcons[index];
-              return (
-                <div className="identity-module" key={capability}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <Icon size={21} aria-hidden="true" strokeWidth={1.5} />
-                  <strong>{capability}</strong>
-                  <Check size={15} aria-hidden="true" />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <figure className="flagship-visual">
-          <img
-            src={project.image}
-            alt="AgentDomain identity and discovery layer for AI agents"
-          />
-          <figcaption>
-            <span>AGENTDOMAIN / SYSTEM OVERVIEW</span>
-            <span>DOMAIN + DNS + EMAIL + SSL + ONCHAIN IDENTITY</span>
-          </figcaption>
-        </figure>
-
-        <div className="flagship-metrics" aria-label="AgentDomain highlights">
-          <div>
-            <strong>01</strong>
-            <span>Registration flow</span>
-          </div>
-          <div>
-            <strong>06</strong>
-            <span>Identity primitives</span>
-          </div>
-          <div>
-            <strong>2X</strong>
-            <span>Onchain networks</span>
-          </div>
-          <div>
-            <strong>24/7</strong>
-            <span>Renewal automation</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function SupportingProduct({ project }: { project: Project }) {
-  const isNexora = project.slug === "nexoraswap";
-
-  return (
-    <article
-      className={`supporting-product supporting-product--${project.accent}`}
-    >
-      <div className="supporting-product__head">
-        <span>{project.index}</span>
-        <span>{project.category}</span>
-        <span>{project.status}</span>
-      </div>
-      <div className="supporting-product__visual">
-        <img src={project.image} alt="" />
-        {isNexora ? (
-          <div className="swap-demo" aria-hidden="true">
-            <div>
-              <span>FROM</span>
-              <strong>ETH</strong>
-              <em>1.00</em>
-            </div>
-            <Zap size={19} />
-            <div>
-              <span>TO</span>
-              <strong>USDC</strong>
-              <em>Best route</em>
-            </div>
-          </div>
-        ) : (
-          <div className="atlas-demo" aria-hidden="true">
-            <div className="atlas-signal">
-              <span>AI DIGEST</span>
-              <i />
-            </div>
-            <p>Signal over noise.</p>
-            <div className="atlas-lines">
-              <i />
-              <i />
-              <i />
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="supporting-product__copy">
-        <span className="project-kicker">{project.tagline}</span>
-        <h3>{project.name}</h3>
-        <p>{project.description}</p>
-      </div>
-      <div className="supporting-product__footer">
-        <div className="stack-list">
-          {project.stack.slice(0, 4).map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-        <div>
-          <ExternalAction href={project.liveUrl} variant="secondary">
-            Open product
-          </ExternalAction>
-          <ExternalAction href={project.repoUrl} variant="quiet">
-            Source
-          </ExternalAction>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function SupportingSection() {
-  return (
-    <section className="supporting section-band">
-      <div className="page-shell">
-        <div className="section-heading">
-          <div>
-            <span className="section-number">03 / SELECTED PRODUCTS</span>
-            <h2>Different problems.<br />One standard.</h2>
-          </div>
-          <p>
-            Each product is designed around a clear job: reduce complexity,
-            expose the useful details, and make the final interaction feel
-            inevitable.
-          </p>
-        </div>
-        <div className="supporting-grid">
-          {projects.slice(1).map((project) => (
-            <SupportingProduct project={project} key={project.slug} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ProfileSection() {
   return (
     <section className="profile section-band" id="profile">
       <div className="page-shell profile-grid">
         <div className="profile-title">
-          <span className="section-number">04 / BUILDER PROFILE</span>
+          <span className="section-number">02 / BUILDER PROFILE</span>
           <h2>
             Md. Rakib
             <span>Independent product builder.</span>
@@ -639,7 +454,7 @@ function Footer() {
         </div>
         <div className="footer-base">
           <span>© 2026 Md. Rakib</span>
-          <span>Built from Dhaka for the open internet.</span>
+          <span>Built from Khulna for the open internet.</span>
           <span className="footer-status">
             <i />
             Launch sequence active
@@ -661,8 +476,6 @@ export default function App() {
         <Hero />
         <SignalStrip />
         <EcosystemRegistry />
-        <FlagshipSection />
-        <SupportingSection />
         <ProfileSection />
       </main>
       <Footer />
