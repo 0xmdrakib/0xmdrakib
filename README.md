@@ -1,64 +1,177 @@
 <p align="center">
-  <img src="./assets/hero.svg" alt="Md. Rakib - independent builder working across Web3 and AI systems" width="100%">
+  <img src="./assets/rakibhq-readme-hero.png" alt="RakibHQ - product headquarters for Md. Rakib" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/RakibHQ-rakibhq.xyz-F5B942?style=flat-square&labelColor=111820" alt="RakibHQ launching at rakibhq.xyz">
-  <a href="https://x.com/0xmdrakib"><img src="https://img.shields.io/badge/X-@0xmdrakib-FFFFFF?style=flat-square&logo=x&logoColor=FFFFFF&labelColor=111820" alt="Follow @0xmdrakib on X"></a>
-  <a href="https://github.com/0xmdrakib?tab=repositories"><img src="https://img.shields.io/badge/Open_source-View_projects-61D6A6?style=flat-square&logo=github&logoColor=FFFFFF&labelColor=111820" alt="Browse my repositories"></a>
+  <a href="https://github.com/0xmdrakib?tab=repositories">
+    <img src="https://img.shields.io/badge/OPEN_SOURCE-EXPLORE_THE_WORK-D9FF57?style=for-the-badge&labelColor=090A0C&color=D9FF57" alt="Explore open source projects">
+  </a>
+  <a href="https://x.com/0xmdrakib">
+    <img src="https://img.shields.io/badge/BUILDING_IN_PUBLIC-@0XMDrakib-F7F7F2?style=for-the-badge&logo=x&logoColor=F7F7F2&labelColor=090A0C&color=25282D" alt="Follow Md. Rakib on X">
+  </a>
+  <img src="https://img.shields.io/badge/RAKIBHQ.XYZ-LAUNCHING_SOON-FF664D?style=for-the-badge&labelColor=090A0C&color=FF664D" alt="RakibHQ launching soon">
 </p>
 
-## Building useful systems for the open internet
-
-I'm **Md. Rakib**, an independent builder working where **autonomous agents, onchain infrastructure, and product engineering** meet. I turn ambitious ideas into usable products, then keep refining them until they feel simple.
-
-**RakibHQ** is the home for my projects, experiments, and long-term work.
-
-### Current focus
-
-- Building **[AgentDomain](https://github.com/0xmdrakib/AgentDomain)**, an autonomous identity stack for AI agents.
-- Shipping **[XphereSwap](https://github.com/0xmdrakib/XphereSwap)** across swaps, liquidity, and bridging.
-- Bringing every project into one coherent ecosystem at **`rakibhq.xyz`**.
-
-## Selected work
-
-| Project | What it does | Core stack | Links |
-| --- | --- | --- | --- |
-| **AgentDomain** | Identity, naming, and service infrastructure for autonomous agents. | TypeScript, Turborepo | [Source](https://github.com/0xmdrakib/AgentDomain) / [Live](https://agentdomain.app) |
-| **XphereSwap** | A DEX for swaps, liquidity, and cross-chain bridging on Xphere. | TypeScript, Solidity, pnpm | [Source](https://github.com/0xmdrakib/XphereSwap) |
-| **AXON Protocol** | Policy-controlled USDC payment vaults for autonomous AI agents. | React, viem, Hardhat | [Source](https://github.com/0xmdrakib/AXONProtocol) / [Live](https://axonprotocol.xyz) |
-| **Atlas Assistant** | A unified news workspace with AI-powered summaries. | Next.js, Prisma, TypeScript | [Source](https://github.com/0xmdrakib/AtlasAssistant) |
-| **BaseGuardian** | Wallet health and security analysis for the Base ecosystem. | Next.js, Ethers, Moralis | [Source](https://github.com/0xmdrakib/BaseGuardian) / [Live](https://baseguardian.vercel.app) |
-| **2048TX** | The classic 2048 game with onchain and Farcaster integrations. | Next.js, Base, Farcaster | [Source](https://github.com/0xmdrakib/2048TX) / [Live](https://2048tx.vercel.app) |
+<h1 align="center">Building systems for the agentic internet.</h1>
 
 <p align="center">
-  <a href="https://github.com/0xmdrakib?tab=repositories"><strong>Explore all projects</strong></a>
+  I'm <strong>Md. Rakib</strong>, an independent product builder working across
+  <strong>autonomous agent infrastructure</strong>, <strong>onchain execution</strong>,
+  and <strong>AI-native intelligence</strong>.
+  <br>
+  <strong>RakibHQ</strong> is the headquarters where those systems become one coherent body of work.
 </p>
 
-## Tools I build with
+<br>
+
+<img src="./assets/signal-bar.svg" alt="RakibHQ is building systems for the open internet" width="100%">
+
+<br>
+
+## Product topology
 
 <p>
-  <img src="https://img.shields.io/badge/TypeScript-111820?style=flat-square&logo=typescript&logoColor=3178C6" alt="TypeScript">
-  <img src="https://img.shields.io/badge/React-111820?style=flat-square&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/Next.js-111820?style=flat-square&logo=nextdotjs&logoColor=FFFFFF" alt="Next.js">
-  <img src="https://img.shields.io/badge/Node.js-111820?style=flat-square&logo=nodedotjs&logoColor=5FA04E" alt="Node.js">
-  <img src="https://img.shields.io/badge/Solidity-111820?style=flat-square&logo=solidity&logoColor=FFFFFF" alt="Solidity">
-  <img src="https://img.shields.io/badge/Hardhat-111820?style=flat-square&logoColor=FFF100" alt="Hardhat">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-111820?style=flat-square&logo=tailwindcss&logoColor=06B6D4" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/Prisma-111820?style=flat-square&logo=prisma&logoColor=FFFFFF" alt="Prisma">
-  <img src="https://img.shields.io/badge/viem-111820?style=flat-square&logoColor=F4C430" alt="viem">
+  Three products. Three distinct jobs. One standard: remove complexity without hiding the details that matter.
 </p>
 
-## How I work
+<img src="./assets/ecosystem-map.svg" alt="RakibHQ product ecosystem with AgentDomain as the flagship project" width="100%">
+
+<br>
+
+## The flagship
+
+<table>
+  <tr>
+    <td width="64%" valign="top">
+      <p><code>01 / AUTONOMOUS IDENTITY INFRASTRUCTURE</code></p>
+      <h2><a href="https://github.com/0xmdrakib/AgentDomain">AgentDomain</a></h2>
+      <h3>One registration flow. A complete identity.</h3>
+      <p>
+        AgentDomain gives autonomous agents a complete internet and onchain identity:
+        domain, managed DNS, email, SSL, Basename, ENS, an AgentID NFT, and renewal automation.
+      </p>
+      <p>
+        It replaces a fragmented manual setup with a programmable identity layer that agents
+        can own, discover, and operate.
+      </p>
+      <p>
+        <a href="https://agentdomain.app"><strong>Launch product ↗</strong></a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="https://github.com/0xmdrakib/AgentDomain"><strong>Inspect source ↗</strong></a>
+      </p>
+    </td>
+    <td width="36%" valign="top">
+      <p><code>IDENTITY BUNDLE</code></p>
+      <p>✓ Traditional domain + managed DNS</p>
+      <p>✓ Agent inbox + send API</p>
+      <p>✓ Apex SSL provisioning</p>
+      <p>✓ Basename + optional ENS</p>
+      <p>✓ AgentID identity record</p>
+      <p>✓ SDK, MCP server, and plugins</p>
+      <p>✓ Autonomous renewal workflow</p>
+    </td>
+  </tr>
+</table>
+
+<p>
+  <img src="https://img.shields.io/badge/NEXT.JS-090A0C?style=flat-square&logo=nextdotjs&logoColor=FFFFFF" alt="Next.js">
+  <img src="https://img.shields.io/badge/TYPESCRIPT-090A0C?style=flat-square&logo=typescript&logoColor=6CE1FF" alt="TypeScript">
+  <img src="https://img.shields.io/badge/BASE-090A0C?style=flat-square&logo=coinbase&logoColor=6275FF" alt="Base">
+  <img src="https://img.shields.io/badge/ENS-090A0C?style=flat-square&logo=ens&logoColor=6CE1FF" alt="ENS">
+  <img src="https://img.shields.io/badge/x402-090A0C?style=flat-square&logoColor=D9FF57" alt="x402">
+  <img src="https://img.shields.io/badge/MCP-090A0C?style=flat-square&logoColor=FF664D" alt="Model Context Protocol">
+</p>
+
+<br>
+
+## Selected systems
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./public/projects/nexoraswap-icon.png" width="54" alt="NexoraSwap icon">
+      <p><code>02 / ONCHAIN EXECUTION</code></p>
+      <h2><a href="https://github.com/0xmdrakib/NexoraSwap">NexoraSwap</a></h2>
+      <h3>Multi-router execution without the route hunting.</h3>
+      <p>
+        A cross-chain DEX console that compares and executes routes across EVM networks
+        and Solana through 1inch, LI.FI, and gas.zip.
+      </p>
+      <p>
+        Quotes, fees, wallet balances, route choices, and minimum received stay visible
+        before execution.
+      </p>
+      <p>
+        <a href="https://nexoraswap.online"><strong>Open product ↗</strong></a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/0xmdrakib/NexoraSwap"><strong>Source ↗</strong></a>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="./public/projects/atlasassistant-icon.png" width="54" alt="AtlasAssistant icon">
+      <p><code>03 / AI INTELLIGENCE</code></p>
+      <h2><a href="https://github.com/0xmdrakib/AtlasAssistant">AtlasAssistant</a></h2>
+      <h3>A calmer interface for understanding the world.</h3>
+      <p>
+        A high-signal global news workspace with focused feeds, useful filters,
+        AI digests, article summaries, listening mode, and broad language support.
+      </p>
+      <p>
+        The product turns a noisy news cycle into a structured reading flow centered
+        on context, signal, and time saved.
+      </p>
+      <p>
+        <a href="https://atlasassistant.online"><strong>Open product ↗</strong></a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/0xmdrakib/AtlasAssistant"><strong>Source ↗</strong></a>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+## Operating system
 
 ```text
-01  Find a real problem.
-02  Build the smallest complete solution.
-03  Test it in the real world.
+01  Find a problem with real weight.
+02  Build the smallest complete system.
+03  Expose it to the real world early.
 04  Polish the details that earn trust.
-05  Ship, learn, and improve.
+05  Ship, learn, and compound the work.
+```
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <strong>AGENT INFRASTRUCTURE</strong><br>
+      <sub>Identity, ownership, discovery, automation</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>ONCHAIN PRODUCTS</strong><br>
+      <sub>Execution, liquidity, transparent routing</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>AI-NATIVE TOOLS</strong><br>
+      <sub>Signal, context, focused intelligence</sub>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+## RakibHQ online
+
+The full project registry, detailed product pages, and future work will live at
+**`rakibhq.xyz`**. The website is built and currently moving through the launch sequence.
+
+```text
+RAKIBHQ.XYZ
+STATUS   /  LAUNCH PREPARATION
+SYSTEMS  /  03 ACTIVE
+BUILDER  /  MD. RAKIB
 ```
 
 <p align="center">
-  <sub>Building in public from RakibHQ.</sub>
+  <sub>Built from Dhaka for the open internet.</sub>
 </p>
