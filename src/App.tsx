@@ -154,11 +154,19 @@ function SignalStrip() {
   return (
     <div className="signal-strip" aria-label="RakibHQ focus areas">
       <div className="signal-strip__track">
-        {[...signals, ...signals].map((signal, index) => (
-          <span key={`${signal}-${index}`}>
-            <CircleDot size={13} aria-hidden="true" />
-            {signal}
-          </span>
+        {[0, 1].map((groupIndex) => (
+          <div
+            className="signal-strip__group"
+            aria-hidden={groupIndex === 1}
+            key={groupIndex}
+          >
+            {signals.map((signal) => (
+              <span key={signal}>
+                <CircleDot size={13} aria-hidden="true" />
+                {signal}
+              </span>
+            ))}
+          </div>
         ))}
       </div>
     </div>
@@ -395,7 +403,7 @@ function Footer() {
           <BrandMark />
           <span>RakibHQ</span>
         </a>
-        <p>Product headquarters by Md. Rakib</p>
+        <p>© 2026 · Product headquarters by Md. Rakib</p>
         <a
           className="footer-github"
           href="https://github.com/0xmdrakib"

@@ -348,8 +348,15 @@ button {
   animation: marquee 28s linear infinite;
 }
 
-.signal-strip span {
+.signal-strip__group {
+  display: flex;
+  min-width: 100vw;
+  flex: 0 0 auto;
+}
+
+.signal-strip__group span {
   display: inline-flex;
+  flex: 1 0 auto;
   height: 40px;
   align-items: center;
   gap: 9px;
@@ -744,18 +751,15 @@ button {
 
 .profile-links {
   display: grid;
-  align-self: start;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--ink);
   border-left: 1px solid var(--ink);
 }
 
 .profile-links > div {
   display: grid;
-  min-height: 84px;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 15px;
+  min-height: 150px;
+  align-content: space-between;
   padding: 17px;
   border-right: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
@@ -772,12 +776,11 @@ button {
 }
 
 .profile-links strong {
-  justify-self: end;
   font-size: 12px;
 }
 
 .site-footer {
-  padding: 20px 0;
+  padding: 30px 0;
   color: #f3f3ef;
   background: var(--ink);
   border-top: 1px solid var(--line-light);
@@ -806,9 +809,10 @@ button {
 
 .footer-bar p {
   margin: 0;
-  color: #8f9297;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
+  color: #b5b7bb;
+  font-family: "Manrope Variable", "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 560;
 }
 
 .footer-github {
@@ -1066,15 +1070,6 @@ button {
 
   .profile-statement {
     grid-template-columns: 1fr;
-  }
-
-  .profile-links > div {
-    grid-template-columns: auto 1fr;
-  }
-
-  .profile-links strong {
-    grid-column: 2;
-    justify-self: start;
   }
 
   .footer-github span {
