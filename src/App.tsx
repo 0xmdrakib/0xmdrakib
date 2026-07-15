@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
-  Bot,
   Boxes,
   CircleDot,
   Github,
@@ -60,7 +59,6 @@ function Header() {
       <a className="brand" href="#top" aria-label="RakibHQ home">
         <BrandMark />
         <span className="brand-word">RakibHQ</span>
-        <span className="brand-domain">.xyz</span>
       </a>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
@@ -112,34 +110,8 @@ function Header() {
 }
 
 function Hero() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeProject = projects[activeIndex];
-
   return (
-    <section
-      className={`hero hero--${activeProject.accent}`}
-      id="top"
-      aria-labelledby="hero-title"
-    >
-      <div className="hero-art" aria-hidden="true">
-        <div className="hero-art__wash" />
-        <img src={activeProject.image} alt="" />
-        <div className="hero-art__grid" />
-        <div className="signal-node signal-node--one">
-          <i />
-          IDENTITY
-        </div>
-        <div className="signal-node signal-node--two">
-          <i />
-          EXECUTION
-        </div>
-        <div className="signal-node signal-node--three">
-          <i />
-          INTELLIGENCE
-        </div>
-        <div className="scan-line" />
-      </div>
-
+    <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero-inner page-shell">
         <div className="hero-copy">
           <div className="eyebrow">
@@ -162,36 +134,6 @@ function Hero() {
             <ExternalAction href="https://github.com/0xmdrakib" variant="quiet">
               GitHub profile
             </ExternalAction>
-          </div>
-        </div>
-
-        <div className="hero-console" aria-label="Featured project selector">
-          <div className="hero-console__meta">
-            <span>ACTIVE SYSTEM</span>
-            <span>{activeProject.index} / 03</span>
-          </div>
-          <div className="hero-console__active">
-            <span className="hero-console__status">
-              <i />
-              {activeProject.status}
-            </span>
-            <strong>{activeProject.name}</strong>
-            <p>{activeProject.tagline}</p>
-          </div>
-          <div className="hero-selector" role="tablist" aria-label="Select project">
-            {projects.map((project, index) => (
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeIndex === index}
-                className={activeIndex === index ? "is-active" : ""}
-                key={project.slug}
-                onClick={() => setActiveIndex(index)}
-              >
-                <span>{project.index}</span>
-                {project.name}
-              </button>
-            ))}
           </div>
         </div>
       </div>
@@ -243,8 +185,23 @@ function ProjectRow({ project }: { project: Project }) {
         <p>{project.tagline}</p>
       </div>
       <div className="registry-description">
-        <p>{project.description}</p>
-        <div className="stack-list" aria-label={`${project.name} technology stack`}>
+        <p className="registry-summary">{project.description}</p>
+        <div className="registry-value">
+          <span>WHY IT MATTERS</span>
+          <p>{project.value}</p>
+        </div>
+        <div
+          className="capability-list"
+          aria-label={`${project.name} key capabilities`}
+        >
+          {project.capabilities.slice(0, 3).map((capability) => (
+            <span key={capability}>{capability}</span>
+          ))}
+        </div>
+        <div
+          className="stack-list"
+          aria-label={`${project.name} technology stack`}
+        >
           {project.stack.slice(0, 4).map((item) => (
             <span key={item}>{item}</span>
           ))}
@@ -253,14 +210,14 @@ function ProjectRow({ project }: { project: Project }) {
       <div className="registry-actions">
         <ExternalAction
           href={project.liveUrl}
-          variant={project.featured ? "primary" : "secondary"}
+          variant="primary"
           ariaLabel={`Open ${project.name} live website`}
         >
           Live product
         </ExternalAction>
         <ExternalAction
           href={project.repoUrl}
-          variant="quiet"
+          variant="secondary"
           ariaLabel={`Open ${project.name} GitHub repository`}
         >
           Source
@@ -285,7 +242,9 @@ function EcosystemRegistry() {
           project.name,
           project.tagline,
           project.description,
+          project.value,
           project.category,
+          ...project.capabilities,
           ...project.stack,
         ]
           .join(" ")
@@ -386,7 +345,6 @@ function ProfileSection() {
         <div className="operating-system">
           <div className="operating-system__head">
             <span>OPERATING SYSTEM</span>
-            <span>RKHQ / 1.0</span>
           </div>
           <ol>
             <li>
@@ -414,11 +372,6 @@ function ProfileSection() {
 
         <div className="profile-links">
           <div>
-            <Bot size={21} aria-hidden="true" />
-            <span>Current focus</span>
-            <strong>Agent infrastructure</strong>
-          </div>
-          <div>
             <Boxes size={21} aria-hidden="true" />
             <span>Headquarters</span>
             <strong>rakibhq.xyz</strong>
@@ -437,29 +390,22 @@ function ProfileSection() {
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="page-shell">
-        <div className="footer-main">
-          <div>
-            <BrandMark />
-            <h2>RakibHQ</h2>
-          </div>
-          <p>
-            The headquarters is being assembled now.
-            <br />
-            Full launch at <strong>rakibhq.xyz</strong>.
-          </p>
-          <ExternalAction href="https://github.com/0xmdrakib" variant="primary">
-            Follow the build
-          </ExternalAction>
-        </div>
-        <div className="footer-base">
-          <span>© 2026 Md. Rakib</span>
-          <span>Built from Khulna for the open internet.</span>
-          <span className="footer-status">
-            <i />
-            Launch sequence active
-          </span>
-        </div>
+      <div className="page-shell footer-bar">
+        <a className="footer-brand" href="#top" aria-label="Back to RakibHQ">
+          <BrandMark />
+          <span>RakibHQ</span>
+        </a>
+        <p>Product headquarters by Md. Rakib</p>
+        <a
+          className="footer-github"
+          href="https://github.com/0xmdrakib"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Github size={16} aria-hidden="true" />
+          <span>0xmdrakib</span>
+          <ArrowUpRight size={14} aria-hidden="true" />
+        </a>
       </div>
     </footer>
   );
