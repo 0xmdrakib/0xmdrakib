@@ -166,36 +166,34 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
-      <img
-        className="hero-artwork"
-        src="/brand/rakibhq-hero-artwork.png"
-        alt=""
-        aria-hidden="true"
-      />
       <div className="hero-inner page-shell">
-        <div className="hero-copy">
-          <div className="eyebrow">
-            <span>Md. Rakib / Independent product builder</span>
-            <span className="eyebrow-status">
-              <i />
-              Khulna &middot; Building globally
-            </span>
-          </div>
-          <h1 id="hero-title">RakibHQ</h1>
-          <p className="hero-lede">
-            The product headquarters for autonomous agent infrastructure,
-            onchain execution, and AI-native tools built with clarity,
-            usefulness, and long-term ambition.
-          </p>
-          <div className="hero-actions">
-            <a className="action action--primary" href="#ecosystem">
-              <span>Explore projects</span>
-              <ArrowDown size={17} aria-hidden="true" />
-            </a>
-            <ExternalAction href="https://github.com/0xmdrakib" variant="quiet">
-              GitHub profile
-            </ExternalAction>
-          </div>
+        <div className="eyebrow">
+          <span>Md. Rakib / Independent product builder</span>
+          <span className="eyebrow-status">
+            <i />
+            Khulna &middot; Building globally
+          </span>
+        </div>
+        <h1 id="hero-title">RakibHQ</h1>
+        <img
+          className="hero-artwork"
+          src="/brand/rakibhq-hero-artwork-optimized.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <p className="hero-lede">
+          The product headquarters for autonomous agent infrastructure,
+          onchain execution, and AI-native tools built with clarity,
+          usefulness, and long-term ambition.
+        </p>
+        <div className="hero-actions">
+          <a className="action action--primary" href="#ecosystem">
+            <span>Explore projects</span>
+            <ArrowDown size={17} aria-hidden="true" />
+          </a>
+          <ExternalAction href="https://github.com/0xmdrakib" variant="quiet">
+            GitHub profile
+          </ExternalAction>
         </div>
       </div>
     </section>

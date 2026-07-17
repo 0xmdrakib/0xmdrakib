@@ -33,9 +33,19 @@ html {
 body {
   margin: 0;
   min-width: 0;
-  min-height: 100vh;
+  min-height: 100svh;
   overflow-x: clip;
   background: var(--canvas);
+}
+
+#root {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 button,
@@ -193,41 +203,40 @@ button {
 .hero {
   position: relative;
   min-height: min(760px, calc(100svh - 64px));
-  overflow: hidden;
   color: var(--ink);
   background: var(--canvas);
   border-bottom: 1px solid var(--hairline);
 }
 
+.hero-inner {
+  display: grid;
+  grid-template-areas:
+    "eyebrow artwork"
+    "title artwork"
+    "lede artwork"
+    "actions artwork";
+  grid-template-columns: minmax(0, 1.12fr) minmax(420px, 0.88fr);
+  grid-template-rows: auto auto auto auto;
+  column-gap: clamp(48px, 5vw, 80px);
+  align-content: center;
+  min-height: inherit;
+  padding: 72px 0;
+}
+
 .hero-artwork {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 0;
-  width: min(1010px, 53vw);
-  height: 100%;
+  grid-area: artwork;
+  width: min(100%, 560px);
+  aspect-ratio: 1;
+  align-self: center;
+  justify-self: end;
   object-fit: contain;
-  object-position: center right;
   pointer-events: none;
+  transform: translateY(-16px);
   user-select: none;
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(280px, 0.38fr);
-  align-items: center;
-  min-height: inherit;
-  padding: 80px 0;
-}
-
-.hero-copy {
-  max-width: 720px;
-  transform: translateY(-24px);
-}
-
 .eyebrow {
+  grid-area: eyebrow;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -257,6 +266,7 @@ button {
 }
 
 .hero h1 {
+  grid-area: title;
   max-width: 100%;
   margin: 0;
   color: var(--primary);
@@ -267,6 +277,7 @@ button {
 }
 
 .hero-lede {
+  grid-area: lede;
   max-width: 650px;
   margin: 32px 0 0;
   color: var(--body);
@@ -275,6 +286,7 @@ button {
 }
 
 .hero-actions {
+  grid-area: actions;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -860,6 +872,7 @@ button {
 }
 
 .site-footer {
+  flex: 0 0 auto;
   padding: 32px 0 28px;
   color: var(--body);
   background: var(--canvas);
@@ -867,8 +880,9 @@ button {
 }
 
 .footer-bar {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
   gap: 28px;
   min-height: 30px;
@@ -881,6 +895,7 @@ button {
 }
 
 .footer-brand {
+  grid-column: 1;
   justify-self: start;
   gap: 10px;
   color: var(--primary);
@@ -889,13 +904,19 @@ button {
 }
 
 .footer-bar p {
+  position: absolute;
+  left: 50%;
   margin: 0;
   color: var(--body);
   font-size: 13px;
   font-weight: 400;
+  text-align: center;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .footer-github {
+  grid-column: 3;
   justify-self: end;
   gap: 8px;
   font-family: "IBM Plex Mono", monospace;
@@ -925,12 +946,21 @@ button {
   }
 
   .hero-inner {
-    grid-template-columns: minmax(0, 0.7fr) minmax(220px, 0.3fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+    column-gap: 32px;
+    padding: 64px 0;
   }
 
   .hero-artwork {
-    width: 54vw;
-    transform: none;
+    width: min(100%, 460px);
+    transform: translateY(-10px);
+  }
+
+  .eyebrow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 38px;
   }
 
   .section-heading {
@@ -986,10 +1016,13 @@ button {
   .mobile-nav-backdrop {
     position: fixed;
     z-index: 1;
-    inset: 58px 0 0;
+    top: 58px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: block;
     width: 100%;
-    height: auto;
+    height: calc(100dvh - 58px);
     padding: 0;
     background: rgba(38, 37, 30, 0.28);
     border: 0;
@@ -1114,6 +1147,36 @@ button {
     min-height: 44px;
   }
 
+  .footer-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px 16px;
+    min-height: 0;
+  }
+
+  .footer-brand {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .footer-bar p {
+    position: static;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-self: center;
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: center;
+    transform: none;
+    white-space: normal;
+  }
+
+  .footer-github {
+    grid-row: 1;
+    grid-column: 2;
+    min-height: 44px;
+  }
+
   .profile-links strong,
   .footer-bar p,
   .footer-github span {
@@ -1127,38 +1190,18 @@ button {
   }
 
   .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(250px, 0.92fr);
-    min-height: 0;
+    min-height: min(620px, calc(100svh - 58px));
   }
 
   .hero-inner {
-    grid-row: 1;
-    grid-column: 1;
-    display: block;
-    width: auto;
-    min-height: 560px;
-    margin: 0;
-    padding: 64px 20px 64px 16px;
-  }
-
-  .hero-copy {
-    max-width: 460px;
-    transform: none;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+    column-gap: 20px;
+    padding: 56px 0;
   }
 
   .hero-artwork {
-    position: relative;
-    grid-row: 1;
-    grid-column: 2;
-    align-self: center;
-    width: 100%;
-    height: auto;
-    max-height: 460px;
-    object-fit: contain;
-    object-position: center right;
-    opacity: 1;
-    transform: none;
+    width: min(100%, 360px);
+    transform: translateY(-8px);
   }
 
   .eyebrow {
@@ -1267,14 +1310,6 @@ button {
     min-height: 156px;
   }
 
-  .footer-bar {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 20px;
-  }
-
-  .footer-bar p {
-    text-align: center;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1293,21 +1328,21 @@ button {
   }
 
   .hero {
-    display: flex;
     min-height: 0;
-    flex-direction: column;
   }
 
   .hero-inner {
-    order: 1;
-    display: block;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "artwork"
+      "lede"
+      "actions";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    column-gap: 0;
     min-height: 0;
-    padding: 48px 0 20px;
-  }
-
-  .hero-copy {
-    max-width: none;
-    transform: none;
+    padding: 42px 0 36px;
   }
 
   .eyebrow {
@@ -1323,7 +1358,8 @@ button {
   }
 
   .hero-lede {
-    margin-top: 24px;
+    max-width: none;
+    margin-top: 0;
     font-size: 15px;
     line-height: 1.6;
   }
@@ -1344,19 +1380,8 @@ button {
   }
 
   .hero-artwork {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    order: 2;
-    align-self: center;
-    width: 100%;
-    height: min(75vw, 280px);
-    max-height: 280px;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-    object-position: center bottom;
-    opacity: 1;
+    width: min(84vw, 340px);
+    margin: 10px auto 2px;
     transform: none;
   }
 
@@ -1520,24 +1545,6 @@ button {
   .site-footer {
     padding: 30px 0 max(26px, env(safe-area-inset-bottom));
   }
-
-  .footer-bar {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 20px 16px;
-    min-height: 0;
-  }
-
-  .footer-bar p {
-    display: block;
-    grid-row: 2;
-    grid-column: 1 / -1;
-    font-size: 12px;
-    line-height: 1.55;
-  }
-
-  .footer-github {
-    min-height: 44px;
-  }
 }
 
 @media (max-width: 380px) {
@@ -1560,11 +1567,11 @@ button {
   }
 
   .hero-inner {
-    padding-top: 40px;
+    padding: 38px 0 32px;
   }
 
   .eyebrow {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   .hero h1 {
@@ -1576,7 +1583,8 @@ button {
   }
 
   .hero-artwork {
-    height: 75vw;
+    width: min(84vw, 280px);
+    margin-top: 8px;
   }
 
   .section-band {
