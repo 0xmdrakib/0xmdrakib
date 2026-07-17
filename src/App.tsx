@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -52,6 +52,45 @@ function BrandMark() {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const wasMenuOpen = useRef(false);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      if (wasMenuOpen.current) {
+        requestAnimationFrame(() => {
+          if (window.innerWidth <= 820) {
+            menuButtonRef.current?.focus();
+          }
+        });
+      }
+      wasMenuOpen.current = false;
+      return;
+    }
+
+    wasMenuOpen.current = true;
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+    const closeOnDesktopResize = () => {
+      if (window.innerWidth > 820) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("resize", closeOnDesktopResize);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("resize", closeOnDesktopResize);
+    };
+  }, [menuOpen]);
 
   return (
     <header className="site-header">
@@ -78,9 +117,11 @@ function Header() {
       </a>
 
       <button
+        ref={menuButtonRef}
         className="menu-button"
         type="button"
         aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+        aria-controls="mobile-navigation"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((open) => !open)}
       >
@@ -88,21 +129,35 @@ function Header() {
       </button>
 
       {menuOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          <a href="#ecosystem" onClick={() => setMenuOpen(false)}>
-            Ecosystem
-          </a>
-          <a href="#profile" onClick={() => setMenuOpen(false)}>
-            Profile
-          </a>
-          <a
-            href="https://github.com/0xmdrakib"
-            target="_blank"
-            rel="noreferrer"
+        <>
+          <button
+            className="mobile-nav-backdrop"
+            type="button"
+            tabIndex={-1}
+            aria-label="Close navigation"
+            onClick={() => setMenuOpen(false)}
+          />
+          <nav
+            className="mobile-nav"
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
           >
-            GitHub <ArrowUpRight size={15} />
-          </a>
-        </nav>
+            <a href="#ecosystem" onClick={() => setMenuOpen(false)}>
+              Ecosystem
+            </a>
+            <a href="#profile" onClick={() => setMenuOpen(false)}>
+              Profile
+            </a>
+            <a
+              href="https://github.com/0xmdrakib"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              GitHub <ArrowUpRight size={15} />
+            </a>
+          </nav>
+        </>
       )}
     </header>
   );
@@ -123,7 +178,7 @@ function Hero() {
             <span>Md. Rakib / Independent product builder</span>
             <span className="eyebrow-status">
               <i />
-              Khulna · Building globally
+              Khulna &middot; Building globally
             </span>
           </div>
           <h1 id="hero-title">RakibHQ</h1>
@@ -191,9 +246,12 @@ function ProjectRow({ project }: { project: Project }) {
         <i />
       </div>
       <div className="registry-title">
-        <div className="project-status">
-          <span>{project.status}</span>
-          <span>{project.category}</span>
+        <div className="project-meta">
+          <span className="project-index-mobile">{project.index}</span>
+          <div className="project-status">
+            <span>{project.status}</span>
+            <span>{project.category}</span>
+          </div>
         </div>
         <h3>{project.name}</h3>
         <p>{project.tagline}</p>
