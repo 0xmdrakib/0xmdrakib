@@ -23,6 +23,34 @@
 <br>
 
 <p>
+  <code>BUILDER PROFILE</code>
+</p>
+
+<table>
+  <tr>
+    <td width="42%" valign="top">
+      <h2>Md. Rakib</h2>
+      <p><strong>Independent product builder from Khulna, Bangladesh.</strong></p>
+      <p>
+        I care about products that make difficult systems feel clear, complete,
+        and trustworthy. My work moves from infrastructure to interface, with
+        the same standard applied to both.
+      </p>
+    </td>
+    <td width="58%" valign="top">
+      <h3>How I build</h3>
+      <p><code>01</code> &nbsp; Find a problem with real weight.</p>
+      <p><code>02</code> &nbsp; Build the smallest complete system.</p>
+      <p><code>03</code> &nbsp; Expose it to the real world early.</p>
+      <p><code>04</code> &nbsp; Polish the details that earn trust.</p>
+      <p><code>05</code> &nbsp; Ship, learn, and compound the work.</p>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<p>
   <code>01 / FLAGSHIP SYSTEM</code>
 </p>
 
@@ -91,34 +119,6 @@
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://github.com/0xmdrakib/AtlasAssistant"><strong>View source ↗</strong></a>
 </p>
-
-<br>
-
-<p>
-  <code>BUILDER PROFILE</code>
-</p>
-
-<table>
-  <tr>
-    <td width="42%" valign="top">
-      <h2>Md. Rakib</h2>
-      <p><strong>Independent product builder from Khulna, Bangladesh.</strong></p>
-      <p>
-        I care about products that make difficult systems feel clear, complete,
-        and trustworthy. My work moves from infrastructure to interface, with
-        the same standard applied to both.
-      </p>
-    </td>
-    <td width="58%" valign="top">
-      <h3>How I build</h3>
-      <p><code>01</code> &nbsp; Find a problem with real weight.</p>
-      <p><code>02</code> &nbsp; Build the smallest complete system.</p>
-      <p><code>03</code> &nbsp; Expose it to the real world early.</p>
-      <p><code>04</code> &nbsp; Polish the details that earn trust.</p>
-      <p><code>05</code> &nbsp; Ship, learn, and compound the work.</p>
-    </td>
-  </tr>
-</table>
 
 <br>
 
