@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="./public/brand/rakibhq-logo-512.png" alt="RakibHQ skyline logo" width="112">
+</p>
+
+<p align="center">
   <img src="./assets/rakibhq-readme-hero.png" alt="RakibHQ, the product headquarters of Md. Rakib" width="100%">
 </p>
 

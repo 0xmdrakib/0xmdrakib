@@ -45,8 +45,7 @@ function ExternalAction({
 function BrandMark() {
   return (
     <span className="brand-mark" aria-hidden="true">
-      <span>R</span>
-      <i>HQ</i>
+      <img src="/brand/rakibhq-logo-64.png" alt="" />
     </span>
   );
 }
@@ -112,6 +111,12 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
+      <img
+        className="hero-artwork"
+        src="/brand/rakibhq-hero-artwork.png"
+        alt=""
+        aria-hidden="true"
+      />
       <div className="hero-inner page-shell">
         <div className="hero-copy">
           <div className="eyebrow">
@@ -404,7 +409,7 @@ function Footer() {
           <BrandMark />
           <span>RakibHQ</span>
         </a>
-        <p>© 2026 · RakibHQ, the product headquarters of Md. Rakib</p>
+        <p>&copy; 2026 &middot; RakibHQ, the product headquarters of Md. Rakib</p>
         <a
           className="footer-github"
           href="https://github.com/0xmdrakib"
