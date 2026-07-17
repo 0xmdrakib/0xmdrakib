@@ -46,7 +46,7 @@ function BrandMark() {
   return (
     <span className="brand-mark" aria-hidden="true">
       <span>R</span>
-      <i />
+      <i>HQ</i>
     </span>
   );
 }
@@ -115,20 +115,21 @@ function Hero() {
       <div className="hero-inner page-shell">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span>Independent product headquarters</span>
+            <span>Md. Rakib / Independent product builder</span>
             <span className="eyebrow-status">
               <i />
-              Khulna / Building globally
+              Khulna · Building globally
             </span>
           </div>
           <h1 id="hero-title">RakibHQ</h1>
           <p className="hero-lede">
-            A focused ecosystem of autonomous agent infrastructure, onchain
-            products, and AI-native tools built by Md. Rakib.
+            The product headquarters for autonomous agent infrastructure,
+            onchain execution, and AI-native tools built with clarity,
+            usefulness, and long-term ambition.
           </p>
           <div className="hero-actions">
             <a className="action action--primary" href="#ecosystem">
-              <span>Explore the ecosystem</span>
+              <span>Explore projects</span>
               <ArrowDown size={17} aria-hidden="true" />
             </a>
             <ExternalAction href="https://github.com/0xmdrakib" variant="quiet">
@@ -143,12 +144,12 @@ function Hero() {
 
 function SignalStrip() {
   const signals = [
-    "Agent infrastructure",
+    "Independent product studio",
+    "Agent identity",
     "Onchain execution",
-    "AI intelligence",
+    "Applied AI",
     "Open source",
-    "Product engineering",
-    "RakibHQ / 2026",
+    "Built from Khulna",
   ];
 
   return (
@@ -195,7 +196,7 @@ function ProjectRow({ project }: { project: Project }) {
       <div className="registry-description">
         <p className="registry-summary">{project.description}</p>
         <div className="registry-value">
-          <span>WHY IT MATTERS</span>
+          <span>Why it matters</span>
           <p>{project.value}</p>
         </div>
         <div
@@ -221,7 +222,7 @@ function ProjectRow({ project }: { project: Project }) {
           variant="primary"
           ariaLabel={`Open ${project.name} live website`}
         >
-          Live product
+          Visit product
         </ExternalAction>
         <ExternalAction
           href={project.repoUrl}
@@ -268,12 +269,12 @@ function EcosystemRegistry() {
       <div className="page-shell">
         <div className="section-heading">
           <div>
-            <span className="section-number">01 / ECOSYSTEM</span>
-            <h2>Product registry</h2>
+            <span className="section-number">01 / Product ecosystem</span>
+            <h2>A growing body of work.</h2>
           </div>
           <p>
-            A growing index of products built to give people and autonomous
-            systems more capable tools for the open internet.
+            One searchable home for every RakibHQ project. The registry is
+            designed to expand as new products move from idea to release.
           </p>
         </div>
 
@@ -334,25 +335,25 @@ function ProfileSection() {
     <section className="profile section-band" id="profile">
       <div className="page-shell profile-grid">
         <div className="profile-title">
-          <span className="section-number">02 / BUILDER PROFILE</span>
+          <span className="section-number">02 / Builder profile</span>
           <h2>
             Md. Rakib
-            <span>Independent product builder.</span>
+            <span>Building useful systems for the open internet.</span>
           </h2>
         </div>
 
         <div className="profile-statement">
           <Sparkles size={24} aria-hidden="true" />
           <p>
-            I build at the intersection of autonomous agents, onchain
-            infrastructure, and product engineering. RakibHQ is where those
-            systems become one coherent body of work.
+            I work where autonomous agents, onchain infrastructure, and
+            thoughtful product engineering meet. RakibHQ is the public record
+            of that work and the home it will keep growing from.
           </p>
         </div>
 
         <div className="operating-system">
           <div className="operating-system__head">
-            <span>OPERATING SYSTEM</span>
+            <span>How I build</span>
           </div>
           <ol>
             <li>
@@ -403,7 +404,7 @@ function Footer() {
           <BrandMark />
           <span>RakibHQ</span>
         </a>
-        <p>© 2026 · Product headquarters by Md. Rakib</p>
+        <p>© 2026 · RakibHQ, the product headquarters of Md. Rakib</p>
         <a
           className="footer-github"
           href="https://github.com/0xmdrakib"

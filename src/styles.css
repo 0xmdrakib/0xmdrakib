@@ -1,23 +1,24 @@
 :root {
-  color: #101114;
-  background: #f0efe9;
+  color: #26251e;
+  background: #f7f7f4;
   font-family: "Manrope Variable", "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #090a0c;
-  --ink-soft: #14161a;
-  --paper: #f0efe9;
-  --paper-bright: #f8f7f2;
-  --muted: #6d6f72;
-  --line: rgba(16, 17, 20, 0.16);
-  --line-light: rgba(255, 255, 255, 0.16);
-  --acid: #d9ff57;
-  --acid-deep: #a9d700;
-  --coral: #ff664d;
-  --cyan: #6ce1ff;
-  --blue: #6275ff;
-  --gold: #ffc75a;
-  --shell: min(1480px, calc(100% - 64px));
+  --primary: #f54e00;
+  --primary-active: #d04200;
+  --ink: #26251e;
+  --body: #5a5852;
+  --muted: #807d72;
+  --muted-soft: #a09c92;
+  --hairline: #e6e5e0;
+  --hairline-soft: #efeee8;
+  --hairline-strong: #cfcdc4;
+  --canvas: #f7f7f4;
+  --canvas-soft: #fafaf7;
+  --card: #ffffff;
+  --success: #1f8a65;
+  --on-primary: #ffffff;
+  --shell: min(1200px, calc(100% - 64px));
 }
 
 * {
@@ -32,7 +33,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--paper);
+  background: var(--canvas);
 }
 
 button,
@@ -60,8 +61,8 @@ button {
 }
 
 ::selection {
-  color: var(--ink);
-  background: var(--acid);
+  color: var(--on-primary);
+  background: var(--primary);
 }
 
 .sr-only {
@@ -82,8 +83,9 @@ button {
   top: 12px;
   left: 12px;
   padding: 10px 14px;
-  color: var(--ink);
-  background: var(--acid);
+  color: var(--on-primary);
+  background: var(--primary);
+  border-radius: 8px;
   transform: translateY(-160%);
 }
 
@@ -105,9 +107,9 @@ button {
   align-items: center;
   height: 64px;
   padding: 0 32px;
-  color: #f7f7f3;
-  background: rgba(9, 10, 12, 0.94);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  color: var(--ink);
+  background: rgba(247, 247, 244, 0.94);
+  border-bottom: 1px solid var(--hairline);
   backdrop-filter: blur(14px);
 }
 
@@ -116,41 +118,41 @@ button {
   align-items: center;
   justify-self: start;
   min-width: 0;
-  font-weight: 780;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 650;
 }
 
 .brand-mark {
   position: relative;
   display: inline-grid;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   place-items: center;
   flex: 0 0 auto;
   overflow: hidden;
-  color: var(--ink);
-  background: var(--acid);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  color: var(--on-primary);
+  background: var(--primary);
+  border-radius: 8px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 14px;
+  font-size: 13px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .brand-mark i {
   position: absolute;
-  right: -4px;
-  bottom: -4px;
-  width: 12px;
-  height: 12px;
-  background: var(--coral);
-  border: 2px solid var(--ink);
-  border-radius: 50%;
+  right: 3px;
+  bottom: 2px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 5px;
+  font-style: normal;
+  font-weight: 600;
 }
 
 .brand-word {
-  margin-left: 9px;
-  font-size: 15px;
+  margin-left: 10px;
 }
 
 .desktop-nav {
@@ -158,24 +160,24 @@ button {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  font-size: 12px;
-  font-weight: 650;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .desktop-nav a,
 .header-github {
-  transition:
-    color 180ms ease,
-    opacity 180ms ease;
+  transition: color 160ms ease;
 }
 
 .desktop-nav a {
-  color: #9fa2a7;
+  color: var(--body);
 }
 
 .desktop-nav a:hover,
-.desktop-nav a:focus-visible {
-  color: #ffffff;
+.desktop-nav a:focus-visible,
+.header-github:hover,
+.header-github:focus-visible {
+  color: var(--primary);
 }
 
 .header-github {
@@ -184,12 +186,7 @@ button {
   justify-self: end;
   gap: 8px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-}
-
-.header-github:hover,
-.header-github:focus-visible {
-  color: var(--acid);
+  font-size: 12px;
 }
 
 .menu-button,
@@ -199,68 +196,68 @@ button {
 
 .hero {
   position: relative;
-  height: calc(100svh - 104px);
-  min-height: 620px;
-  max-height: 850px;
+  min-height: min(760px, calc(100svh - 64px));
   overflow: hidden;
-  color: #f8f8f4;
-  background: var(--ink);
+  color: var(--ink);
+  background: var(--canvas);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(310px, 0.75fr);
-  align-items: end;
-  height: 100%;
-  padding: 58px 0 52px;
+  grid-template-columns: minmax(0, 0.62fr) minmax(280px, 0.38fr);
+  align-items: center;
+  min-height: inherit;
+  padding: 80px 0;
 }
 
 .hero-copy {
-  align-self: center;
-  max-width: 870px;
+  max-width: 720px;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 720px;
-  margin-bottom: 34px;
-  padding-bottom: 12px;
-  color: #b4b6ba;
-  border-bottom: 1px solid var(--line-light);
+  gap: 24px;
+  margin-bottom: 48px;
+  padding-bottom: 16px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--hairline-strong);
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .eyebrow-status {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  flex: 0 0 auto;
+  gap: 8px;
 }
 
 .eyebrow-status i {
-  width: 6px;
-  height: 6px;
-  background: var(--acid);
+  width: 7px;
+  height: 7px;
+  background: var(--success);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(217, 255, 87, 0.65);
 }
 
 .hero h1 {
   max-width: 100%;
   margin: 0;
-  font-size: clamp(68px, 11vw, 170px);
-  font-weight: 760;
-  line-height: 0.84;
+  color: var(--primary);
+  font-size: clamp(64px, 8vw, 116px);
+  font-weight: 400;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
 .hero-lede {
-  max-width: 640px;
-  margin: 34px 0 0;
-  color: #d2d3d4;
+  max-width: 650px;
+  margin: 32px 0 0;
+  color: var(--body);
   font-size: 18px;
   line-height: 1.65;
 }
@@ -269,83 +266,71 @@ button {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 30px;
+  gap: 12px;
+  margin-top: 32px;
 }
 
 .action {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 40px;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 0 16px;
+  gap: 12px;
+  padding: 0 18px;
   border: 1px solid transparent;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 720;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
   transition:
-    color 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
-}
-
-.action:hover,
-.action:focus-visible {
-  transform: translateY(-2px);
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
 .action--primary {
-  color: var(--ink);
-  background: var(--acid);
-  border-color: var(--acid);
+  color: var(--on-primary);
+  background: var(--primary);
+  border-color: var(--primary);
 }
 
 .action--primary:hover,
 .action--primary:focus-visible {
-  background: #edff9a;
-  border-color: #edff9a;
+  background: var(--primary-active);
+  border-color: var(--primary-active);
 }
 
 .action--secondary {
   color: var(--ink);
-  background: transparent;
-  border-color: rgba(16, 17, 20, 0.38);
+  background: var(--card);
+  border-color: var(--hairline-strong);
 }
 
 .action--secondary:hover,
-.action--secondary:focus-visible {
-  color: #ffffff;
-  background: var(--ink);
+.action--secondary:focus-visible,
+.action--quiet:hover,
+.action--quiet:focus-visible {
   border-color: var(--ink);
 }
 
 .action--quiet {
-  color: inherit;
-  background: rgba(255, 255, 255, 0.03);
-  border-color: currentColor;
-  opacity: 0.78;
-}
-
-.action--quiet:hover,
-.action--quiet:focus-visible {
-  opacity: 1;
+  color: var(--ink);
+  background: transparent;
+  border-color: transparent;
 }
 
 .signal-strip {
   width: 100%;
   overflow: hidden;
-  color: var(--ink);
-  background: var(--acid);
-  border-top: 1px solid var(--ink);
+  color: var(--canvas);
+  background: var(--ink);
   border-bottom: 1px solid var(--ink);
 }
 
 .signal-strip__track {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .signal-strip__group {
@@ -357,54 +342,60 @@ button {
 .signal-strip__group span {
   display: inline-flex;
   flex: 1 0 auto;
-  height: 40px;
+  height: 44px;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   padding: 0 28px;
-  border-right: 1px solid rgba(9, 10, 12, 0.36);
+  border-right: 1px solid rgba(247, 247, 244, 0.18);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
-  font-weight: 580;
+  font-size: 10px;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
+.signal-strip__group svg {
+  color: var(--primary);
+}
+
 .section-band {
-  padding: 110px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--hairline);
 }
 
 .section-heading {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
   gap: 80px;
   align-items: end;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
 
 .section-number {
   display: block;
-  margin-bottom: 22px;
-  color: #77797b;
+  margin-bottom: 20px;
+  color: var(--muted);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .section-heading h2,
 .profile-title h2 {
   margin: 0;
-  font-size: 64px;
-  font-weight: 710;
-  line-height: 1.02;
+  color: var(--ink);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
 .section-heading > p {
-  max-width: 520px;
-  margin: 0 0 5px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.75;
+  max-width: 500px;
+  margin: 0 0 4px;
+  color: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .registry-tools {
@@ -412,34 +403,36 @@ button {
   align-items: stretch;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 20px;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  margin-bottom: 24px;
 }
 
 .filter-tabs {
   display: flex;
   min-width: 0;
   overflow-x: auto;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
 }
 
 .filter-tabs button {
-  min-height: 54px;
-  padding: 0 17px;
-  color: #77797c;
+  min-height: 40px;
+  padding: 0 14px;
+  color: var(--body);
   background: transparent;
   border: 0;
-  border-right: 1px solid var(--line);
+  border-radius: 6px;
   cursor: pointer;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
+  font-size: 13px;
+  font-weight: 500;
   white-space: nowrap;
 }
 
 .filter-tabs button:hover,
 .filter-tabs button:focus-visible,
 .filter-tabs button.is-active {
-  color: #ffffff;
+  color: var(--canvas);
   background: var(--ink);
 }
 
@@ -448,68 +441,73 @@ button {
   grid-template-columns: auto minmax(150px, 240px) auto;
   align-items: center;
   gap: 10px;
-  padding-left: 18px;
-  border-left: 1px solid var(--ink);
+  min-height: 50px;
+  padding-left: 16px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+}
+
+.search-control svg {
+  color: var(--muted);
 }
 
 .search-control input {
   width: 100%;
-  height: 52px;
+  height: 48px;
   padding: 0;
   color: var(--ink);
   background: transparent;
   border: 0;
   outline: none;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .search-control input::placeholder {
-  color: #898b8d;
+  color: var(--muted-soft);
+}
+
+.search-control:focus-within {
+  border-color: var(--ink);
 }
 
 .search-control kbd {
   display: grid;
-  min-width: 26px;
-  height: 26px;
+  min-width: 28px;
+  height: 28px;
   place-items: center;
-  margin-right: 13px;
-  color: #ffffff;
-  background: var(--ink);
-  border-radius: 3px;
+  margin-right: 10px;
+  color: var(--body);
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .registry-list {
-  border-top: 1px solid var(--ink);
+  display: grid;
+  gap: 16px;
 }
 
 .registry-row {
-  --row-accent: var(--coral);
+  --row-accent: var(--ink);
   display: grid;
-  grid-template-columns: 80px minmax(210px, 0.7fr) minmax(360px, 1.35fr) auto;
-  gap: 34px;
+  grid-template-columns: 56px minmax(190px, 0.75fr) minmax(330px, 1.25fr) auto;
+  gap: 28px;
   align-items: center;
-  min-height: 280px;
-  padding: 38px 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.registry-row--acid {
-  --row-accent: var(--acid-deep);
-}
-
-.registry-row--cyan {
-  --row-accent: #008eac;
-}
-
-.registry-row--coral {
-  --row-accent: var(--coral);
+  min-height: 292px;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
 }
 
 .registry-row--featured {
-  min-height: 310px;
-  background: rgba(217, 255, 87, 0.035);
+  min-height: 340px;
+  color: var(--canvas);
+  background: var(--ink);
+  border-color: var(--ink);
 }
 
 .registry-index {
@@ -517,75 +515,107 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #7c7e81;
-  border-right: 1px solid var(--line);
+  color: var(--muted);
+  border-right: 1px solid var(--hairline);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
+  font-size: 11px;
+}
+
+.registry-row--featured .registry-index {
+  color: var(--muted-soft);
+  border-color: rgba(247, 247, 244, 0.18);
 }
 
 .registry-index i {
   width: 8px;
   height: 8px;
-  background: var(--row-accent);
+  background: var(--primary);
   border-radius: 50%;
 }
 
 .project-status {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 14px;
-  color: #77797d;
   font-family: "IBM Plex Mono", monospace;
   font-size: 9px;
   text-transform: uppercase;
 }
 
+.project-status span {
+  padding: 5px 8px;
+  color: var(--body);
+  background: var(--canvas);
+  border-radius: 9999px;
+}
+
 .project-status span:first-child {
-  color: var(--row-accent);
+  color: var(--success);
+}
+
+.registry-row--featured .project-status span {
+  color: var(--canvas);
+  background: rgba(247, 247, 244, 0.1);
+}
+
+.registry-row--featured .project-status span:first-child {
+  color: #ffffff;
+  background: var(--primary);
 }
 
 .registry-title h3 {
   margin: 0;
-  font-size: 36px;
-  line-height: 1.1;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.15;
 }
 
 .registry-title > p {
   max-width: 330px;
   margin: 12px 0 0;
-  color: #5e6063;
-  font-size: 12px;
+  color: var(--body);
+  font-size: 14px;
   line-height: 1.55;
+}
+
+.registry-row--featured .registry-title > p,
+.registry-row--featured .registry-summary,
+.registry-row--featured .registry-value p,
+.registry-row--featured .capability-list span {
+  color: #d3d1c9;
 }
 
 .registry-summary {
   max-width: 650px;
   margin: 0;
-  color: #4e5053;
-  font-size: 13px;
-  line-height: 1.7;
+  color: var(--body);
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .registry-value {
   max-width: 680px;
-  margin-top: 14px;
-  padding-left: 13px;
-  border-left: 2px solid var(--row-accent);
+  margin-top: 16px;
+  padding-left: 14px;
+  border-left: 2px solid var(--primary);
 }
 
 .registry-value > span {
   display: block;
-  margin-bottom: 5px;
-  color: #77797d;
+  margin-bottom: 6px;
+  color: var(--muted);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .registry-value p {
   margin: 0;
-  color: #242629;
-  font-size: 11px;
-  line-height: 1.65;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .capability-list {
@@ -597,19 +627,19 @@ button {
 
 .capability-list span {
   position: relative;
-  padding-left: 12px;
-  color: #4f5154;
-  font-size: 10px;
+  padding-left: 13px;
+  color: var(--body);
+  font-size: 11px;
 }
 
 .capability-list span::before {
   position: absolute;
-  top: 0.55em;
+  top: 0.62em;
   left: 0;
   width: 5px;
   height: 5px;
   content: "";
-  background: var(--row-accent);
+  background: var(--primary);
   border-radius: 50%;
   transform: translateY(-50%);
 }
@@ -623,18 +653,35 @@ button {
 
 .stack-list span {
   padding: 6px 8px;
-  color: #67696c;
-  background: rgba(9, 10, 12, 0.035);
-  border: 1px solid var(--line);
-  border-radius: 3px;
+  color: var(--body);
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 8px;
+  font-size: 9px;
+}
+
+.registry-row--featured .stack-list span {
+  color: #d3d1c9;
+  background: rgba(247, 247, 244, 0.06);
+  border-color: rgba(247, 247, 244, 0.18);
 }
 
 .registry-actions {
   display: grid;
-  gap: 8px;
-  min-width: 138px;
+  gap: 10px;
+  min-width: 142px;
+}
+
+.registry-row--featured .action--secondary {
+  color: var(--canvas);
+  background: transparent;
+  border-color: rgba(247, 247, 244, 0.4);
+}
+
+.registry-row--featured .action--secondary:hover,
+.registry-row--featured .action--secondary:focus-visible {
+  border-color: var(--canvas);
 }
 
 .empty-state {
@@ -643,7 +690,9 @@ button {
   place-items: center;
   align-content: center;
   gap: 14px;
-  border-bottom: 1px solid var(--ink);
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
   text-align: center;
 }
 
@@ -653,31 +702,33 @@ button {
 }
 
 .empty-state button {
-  padding: 9px 12px;
-  color: #ffffff;
-  background: var(--ink);
+  min-height: 40px;
+  padding: 0 14px;
+  color: var(--on-primary);
+  background: var(--primary);
   border: 0;
-  border-radius: 3px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .profile {
-  background: #e7e5dd;
+  background: var(--canvas-soft);
 }
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
-  gap: 70px 100px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px 80px;
 }
 
 .profile-title h2 span {
   display: block;
-  margin-top: 12px;
-  color: var(--muted);
+  margin-top: 14px;
+  color: var(--body);
   font-size: 20px;
-  font-weight: 530;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .profile-statement {
@@ -685,35 +736,39 @@ button {
   grid-template-columns: auto 1fr;
   gap: 20px;
   align-items: start;
-  padding-top: 32px;
-  border-top: 1px solid var(--ink);
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline-strong);
 }
 
 .profile-statement svg {
-  color: var(--coral);
+  color: var(--primary);
 }
 
 .profile-statement p {
   max-width: 720px;
   margin: 0;
-  font-size: 24px;
-  line-height: 1.5;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .operating-system {
-  border: 1px solid var(--ink);
-  border-radius: 6px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
 }
 
 .operating-system__head {
   display: flex;
-  min-height: 42px;
+  min-height: 48px;
   align-items: center;
-  padding: 0 15px;
-  color: #ffffff;
-  background: var(--ink);
+  padding: 0 18px;
+  border-bottom: 1px solid var(--hairline);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .operating-system ol {
@@ -724,10 +779,10 @@ button {
 
 .operating-system li {
   display: grid;
-  grid-template-columns: 60px 1fr;
-  min-height: 66px;
+  grid-template-columns: 64px 1fr;
+  min-height: 68px;
   align-items: center;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .operating-system li:last-child {
@@ -738,52 +793,56 @@ button {
   align-self: stretch;
   display: grid;
   place-items: center;
-  border-right: 1px solid var(--line);
+  color: var(--primary);
+  border-right: 1px solid var(--hairline);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .operating-system li p {
   margin: 0;
   padding: 0 20px;
-  font-size: 12px;
+  color: var(--body);
+  font-size: 13px;
 }
 
 .profile-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--ink);
-  border-left: 1px solid var(--ink);
+  gap: 16px;
 }
 
 .profile-links > div {
   display: grid;
-  min-height: 150px;
+  min-height: 210px;
   align-content: space-between;
-  padding: 17px;
-  border-right: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
 }
 
 .profile-links svg {
-  color: #6d6f72;
+  color: var(--primary);
 }
 
 .profile-links span {
   color: var(--muted);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
 }
 
 .profile-links strong {
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .site-footer {
-  padding: 48px 0;
-  color: #f3f3ef;
-  background: var(--ink);
-  border-top: 1px solid var(--line-light);
+  padding: 64px 0;
+  color: var(--body);
+  background: var(--canvas);
+  border-top: 1px solid var(--hairline);
 }
 
 .footer-bar {
@@ -791,7 +850,7 @@ button {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 28px;
-  min-height: 42px;
+  min-height: 44px;
 }
 
 .footer-brand,
@@ -802,31 +861,30 @@ button {
 
 .footer-brand {
   justify-self: start;
-  gap: 9px;
+  gap: 10px;
+  color: var(--primary);
   font-size: 14px;
-  font-weight: 760;
+  font-weight: 650;
 }
 
 .footer-bar p {
   margin: 0;
-  color: #b5b7bb;
-  font-family: "Manrope Variable", "Segoe UI", sans-serif;
-  font-size: 11px;
-  font-weight: 560;
+  color: var(--body);
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .footer-github {
   justify-self: end;
   gap: 8px;
-  color: #b7b9bd;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
-  transition: color 180ms ease;
+  font-size: 11px;
+  transition: color 160ms ease;
 }
 
 .footer-github:hover,
 .footer-github:focus-visible {
-  color: var(--acid);
+  color: var(--primary);
 }
 
 @keyframes marquee {
@@ -835,33 +893,26 @@ button {
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1080px) {
   :root {
-    --shell: min(100% - 44px, 1080px);
+    --shell: min(100% - 44px, 960px);
   }
 
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr) 340px;
-    gap: 50px;
-  }
-
-  .hero h1 {
-    font-size: 104px;
+    grid-template-columns: minmax(0, 0.7fr) minmax(220px, 0.3fr);
   }
 
   .registry-row {
-    grid-template-columns: 60px minmax(190px, 0.7fr) minmax(260px, 1fr);
+    grid-template-columns: 48px minmax(190px, 0.7fr) minmax(270px, 1fr);
   }
 
   .registry-actions {
     grid-column: 2 / -1;
     display: flex;
-    padding-top: 4px;
   }
-
 }
 
-@media (max-width: 860px) {
+@media (max-width: 820px) {
   :root {
     --shell: calc(100% - 32px);
   }
@@ -879,13 +930,13 @@ button {
 
   .menu-button {
     display: grid;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     place-items: center;
-    color: #ffffff;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 8px;
   }
 
   .mobile-nav {
@@ -894,10 +945,10 @@ button {
     right: 0;
     left: 0;
     display: grid;
-    color: #ffffff;
-    background: var(--ink);
-    border-top: 1px solid var(--line-light);
-    border-bottom: 1px solid var(--line-light);
+    color: var(--ink);
+    background: var(--canvas);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
   }
 
   .mobile-nav a {
@@ -906,25 +957,18 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    border-bottom: 1px solid var(--line-light);
-    font-size: 12px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 14px;
   }
 
   .hero {
-    height: auto;
     min-height: 0;
-    max-height: none;
   }
 
   .hero-inner {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    gap: 34px;
-    padding: 54px 0 68px;
-  }
-
-  .hero-copy {
-    align-self: start;
+    grid-template-columns: minmax(0, 1fr) minmax(80px, 0.16fr);
+    min-height: 620px;
+    padding: 64px 0;
   }
 
   .eyebrow {
@@ -935,17 +979,11 @@ button {
   }
 
   .hero h1 {
-    font-size: 82px;
+    font-size: 72px;
   }
 
   .hero-lede {
-    max-width: 540px;
-    margin-top: 27px;
-    font-size: 15px;
-  }
-
-  .section-band {
-    padding: 76px 0;
+    font-size: 16px;
   }
 
   .section-heading,
@@ -955,32 +993,25 @@ button {
   }
 
   .section-heading {
-    margin-bottom: 42px;
+    margin-bottom: 40px;
   }
 
   .section-heading h2,
   .profile-title h2 {
-    font-size: 48px;
+    font-size: 46px;
   }
 
   .registry-tools {
     align-items: stretch;
     flex-direction: column;
-    gap: 0;
-  }
-
-  .filter-tabs {
-    border-bottom: 1px solid var(--ink);
-  }
-
-  .search-control {
-    border-left: 0;
+    gap: 12px;
   }
 
   .registry-row {
-    grid-template-columns: 44px 1fr;
-    gap: 24px;
-    padding: 28px 0;
+    grid-template-columns: 40px 1fr;
+    gap: 22px;
+    min-height: 0;
+    padding: 28px;
   }
 
   .registry-index {
@@ -1020,8 +1051,9 @@ button {
   }
 
   .hero-inner {
-    min-height: 0;
-    padding: 40px 0 58px;
+    grid-template-columns: 1fr;
+    min-height: 560px;
+    padding: 52px 0 64px;
   }
 
   .hero h1 {
@@ -1029,25 +1061,29 @@ button {
   }
 
   .hero-lede {
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .hero-actions .action {
     width: 100%;
   }
 
+  .section-band {
+    padding: 64px 0;
+  }
+
   .section-heading h2,
   .profile-title h2 {
-    font-size: 39px;
+    font-size: 38px;
   }
 
   .section-heading > p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .filter-tabs button {
-    padding: 0 13px;
+    padding: 0 12px;
   }
 
   .search-control {
@@ -1055,8 +1091,9 @@ button {
   }
 
   .registry-row {
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 28px 1fr;
     gap: 16px;
+    padding: 22px 18px;
   }
 
   .registry-title h3 {
@@ -1072,12 +1109,20 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .profile-links {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-links > div {
+    min-height: 170px;
+  }
+
   .footer-github span {
     display: none;
   }
 
   .site-footer {
-    padding: 36px 0;
+    padding: 52px 0;
   }
 }
 
