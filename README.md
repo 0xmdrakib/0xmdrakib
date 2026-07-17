@@ -1,171 +1,133 @@
 <p align="center">
-  <img src="./public/brand/rakibhq-logo-512.png" alt="RakibHQ skyline logo" width="112">
-</p>
-
-<p align="center">
-  <img src="./assets/rakibhq-readme-hero.png" alt="RakibHQ, the product headquarters of Md. Rakib" width="100%">
-</p>
-
-<p align="center">
   <a href="https://rakibhq.xyz">
-    <img src="https://img.shields.io/badge/RAKIBHQ-PRODUCT_HEADQUARTERS-F54E00?style=for-the-badge&labelColor=26251E&color=F54E00" alt="Visit RakibHQ">
-  </a>
-  <a href="https://mdrakib.xyz">
-    <img src="https://img.shields.io/badge/PERSONAL_WEB-MDRAKIB.XYZ-F7F7F4?style=for-the-badge&labelColor=26251E&color=E6E5E0" alt="Visit Md. Rakib's personal website">
-  </a>
-  <a href="https://x.com/0xmdrakib">
-    <img src="https://img.shields.io/badge/BUILDING_IN_PUBLIC-@0XMDRAKIB-F7F7F4?style=for-the-badge&logo=x&logoColor=F7F7F4&labelColor=26251E&color=5A5852" alt="Follow Md. Rakib on X">
+    <img src="./assets/readme/rakibhq-profile-hero.png" alt="RakibHQ — the product headquarters of Md. Rakib" width="100%">
   </a>
 </p>
 
-<p align="center"><code>MD. RAKIB / INDEPENDENT PRODUCT BUILDER / KHULNA</code></p>
-
-<h1 align="center">Building useful systems for the open internet.</h1>
+<p align="center">
+  <a href="https://rakibhq.xyz"><strong>Explore RakibHQ</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://mdrakib.xyz"><strong>Personal website</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://x.com/0xmdrakib"><strong>Build log</strong></a>
+</p>
 
 <p align="center">
-  I work where <strong>autonomous agents</strong>, <strong>onchain infrastructure</strong>,
-  and <strong>thoughtful product engineering</strong> meet.
+  I design and build complete products where
+  <strong>autonomous agents</strong>, <strong>onchain infrastructure</strong>,
+  and <strong>applied AI</strong> meet.
   <br>
-  RakibHQ is the public home for that work and the ecosystem it is becoming.
+  RakibHQ is the public headquarters for that work.
 </p>
 
 <br>
 
-## Flagship system
+<p>
+  <code>01 / FLAGSHIP SYSTEM</code>
+</p>
+
+<p>
+  <a href="https://agentdomain.app">
+    <img src="./assets/readme/agentdomain-flagship.png" alt="AgentDomain — identity infrastructure for the agentic internet" width="100%">
+  </a>
+</p>
 
 <table>
   <tr>
-    <td width="62%" valign="top">
-      <p><code>01 / AGENT IDENTITY INFRASTRUCTURE</code></p>
-      <h2><a href="https://github.com/0xmdrakib/AgentDomain">AgentDomain</a></h2>
-      <h3>A complete internet and onchain identity, in one registration flow.</h3>
+    <td width="60%" valign="top">
+      <h3>One identity layer for autonomous agents.</h3>
       <p>
-        AgentDomain gives autonomous agents the infrastructure required to exist,
-        communicate, transact, and remain operational: a domain, managed DNS,
-        email, SSL, Basename, optional ENS, an AgentID NFT, and renewal automation.
-      </p>
-      <p>
-        Instead of asking builders to assemble disconnected services manually,
-        it turns identity into one programmable layer that agents can own and use.
-      </p>
-      <p>
-        <a href="https://agentdomain.app"><strong>Visit AgentDomain</strong></a>
-        &nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="https://github.com/0xmdrakib/AgentDomain"><strong>View source</strong></a>
+        AgentDomain turns a fragmented setup process into one programmable flow:
+        domain registration, managed DNS, agent email, SSL, Basename, optional ENS,
+        AgentID NFT issuance, SDK and MCP access, plus autonomous renewal support.
       </p>
     </td>
-    <td width="38%" valign="top">
-      <img src="./public/projects/agentdomain-social-card.png" alt="AgentDomain product preview" width="100%">
-      <br>
-      <code>DOMAIN · DNS · EMAIL · SSL · BASENAME · ENS · AGENTID · MCP</code>
+    <td width="40%" valign="top">
+      <p><strong>Core capabilities</strong></p>
+      <p>
+        <code>DOMAIN + DNS</code><br>
+        <code>EMAIL + SSL</code><br>
+        <code>ENS + BASENAME</code><br>
+        <code>AGENTID + MCP</code>
+      </p>
     </td>
   </tr>
 </table>
 
 <p>
-  <img src="https://img.shields.io/badge/NEXT.JS-26251E?style=flat-square&logo=nextdotjs&logoColor=FFFFFF" alt="Next.js">
-  <img src="https://img.shields.io/badge/TYPESCRIPT-26251E?style=flat-square&logo=typescript&logoColor=9FBBE0" alt="TypeScript">
-  <img src="https://img.shields.io/badge/BASE-26251E?style=flat-square&logo=coinbase&logoColor=FFFFFF" alt="Base">
-  <img src="https://img.shields.io/badge/ENS-26251E?style=flat-square&logo=ens&logoColor=C0A8DD" alt="ENS">
-  <img src="https://img.shields.io/badge/x402-26251E?style=flat-square&logoColor=F54E00" alt="x402">
-  <img src="https://img.shields.io/badge/MCP-26251E?style=flat-square&logoColor=9FC9A2" alt="Model Context Protocol">
+  <a href="https://agentdomain.app"><strong>Visit AgentDomain ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/0xmdrakib/AgentDomain"><strong>View source ↗</strong></a>
 </p>
 
 <br>
 
-## Selected products
+<p>
+  <code>02—03 / SELECTED PRODUCTS</code>
+</p>
+
+<p>
+  <a href="https://nexoraswap.online">
+    <img src="./assets/readme/nexoraswap-project.png" alt="NexoraSwap — cross-chain execution console" width="100%">
+  </a>
+</p>
+
+<p>
+  <a href="https://nexoraswap.online"><strong>Visit NexoraSwap ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/0xmdrakib/NexoraSwap"><strong>View source ↗</strong></a>
+</p>
+
+<br>
+
+<p>
+  <a href="https://atlasassistant.online">
+    <img src="./assets/readme/atlasassistant-project.png" alt="AtlasAssistant — high-signal global news workspace" width="100%">
+  </a>
+</p>
+
+<p>
+  <a href="https://atlasassistant.online"><strong>Visit AtlasAssistant ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/0xmdrakib/AtlasAssistant"><strong>View source ↗</strong></a>
+</p>
+
+<br>
+
+<p>
+  <code>BUILDER PROFILE</code>
+</p>
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <img src="./public/projects/nexoraswap-icon.png" width="52" alt="NexoraSwap icon">
-      <p><code>02 / ONCHAIN EXECUTION</code></p>
-      <h2><a href="https://github.com/0xmdrakib/NexoraSwap">NexoraSwap</a></h2>
-      <h3>Multi-router execution without the route hunting.</h3>
+    <td width="42%" valign="top">
+      <h2>Md. Rakib</h2>
+      <p><strong>Independent product builder from Khulna, Bangladesh.</strong></p>
       <p>
-        A cross-chain DEX console for comparing and executing routes across EVM
-        networks and Solana through 1inch, LI.FI, and gas.zip.
+        I care about products that make difficult systems feel clear, complete,
+        and trustworthy. My work moves from infrastructure to interface, with
+        the same standard applied to both.
       </p>
-      <p>
-        Quotes, fees, balances, route choices, and minimum received remain visible
-        before a transaction is executed.
-      </p>
-      <p>
-        <a href="https://nexoraswap.online"><strong>Visit product</strong></a>
-        &nbsp;·&nbsp;
-        <a href="https://github.com/0xmdrakib/NexoraSwap"><strong>View source</strong></a>
-      </p>
-      <code>NEXT.JS · WAGMI · VIEM · LI.FI · SOLANA</code>
     </td>
-    <td width="50%" valign="top">
-      <img src="./public/projects/atlasassistant-icon.png" width="52" alt="AtlasAssistant icon">
-      <p><code>03 / APPLIED AI</code></p>
-      <h2><a href="https://github.com/0xmdrakib/AtlasAssistant">AtlasAssistant</a></h2>
-      <h3>A calmer interface for understanding the world.</h3>
-      <p>
-        A high-signal global news workspace with focused feeds, useful filters,
-        AI digests, article summaries, listening mode, and broad language support.
-      </p>
-      <p>
-        It turns a noisy news cycle into a structured reading flow centered on
-        context, signal, and time saved.
-      </p>
-      <p>
-        <a href="https://atlasassistant.online"><strong>Visit product</strong></a>
-        &nbsp;·&nbsp;
-        <a href="https://github.com/0xmdrakib/AtlasAssistant"><strong>View source</strong></a>
-      </p>
-      <code>NEXT.JS · TYPESCRIPT · PRISMA · AI · RSS</code>
+    <td width="58%" valign="top">
+      <h3>How I build</h3>
+      <p><code>01</code> &nbsp; Find a problem with real weight.</p>
+      <p><code>02</code> &nbsp; Build the smallest complete system.</p>
+      <p><code>03</code> &nbsp; Expose it to the real world early.</p>
+      <p><code>04</code> &nbsp; Polish the details that earn trust.</p>
+      <p><code>05</code> &nbsp; Ship, learn, and compound the work.</p>
     </td>
   </tr>
 </table>
 
 <br>
-
-## How I build
-
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <strong>01 · FIND THE WEIGHT</strong>
-      <br><br>
-      Start with a problem that is real enough to deserve a complete product.
-    </td>
-    <td width="33%" valign="top">
-      <strong>02 · SHIP THE SYSTEM</strong>
-      <br><br>
-      Build the smallest coherent version, expose it early, and learn from reality.
-    </td>
-    <td width="33%" valign="top">
-      <strong>03 · EARN THE TRUST</strong>
-      <br><br>
-      Polish the details, document the work, and keep compounding what proves useful.
-    </td>
-  </tr>
-</table>
-
-<br>
-
-## Headquarters
-
-<table>
-  <tr>
-    <td width="65%" valign="top">
-      <h3>RakibHQ is the growing registry for everything I build.</h3>
-      <p>
-        The website is structured to hold many more products over time while keeping
-        every project easy to search, understand, visit, and inspect.
-      </p>
-    </td>
-    <td width="35%" valign="top">
-      <code>LOCATION  / KHULNA</code><br>
-      <code>BUILDER   / MD. RAKIB</code><br>
-      <code>GITHUB    / @0XMDRAKIB</code><br>
-      <code>HQ        / RAKIBHQ.XYZ</code>
-    </td>
-  </tr>
-</table>
 
 <p align="center">
-  <sub>Designed and built by Md. Rakib · Khulna, Bangladesh</sub>
+  <a href="https://rakibhq.xyz">
+    <img src="./assets/readme/rakibhq-profile-footer.png" alt="RakibHQ — building useful systems for the open internet from Khulna" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <sub>© 2026 Md. Rakib · RakibHQ is the project headquarters · The personal website remains separate at mdrakib.xyz</sub>
 </p>

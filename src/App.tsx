@@ -409,7 +409,9 @@ function Footer() {
           <BrandMark />
           <span>RakibHQ</span>
         </a>
-        <p>&copy; 2026 &middot; RakibHQ, the product headquarters of Md. Rakib</p>
+        <p>
+          &copy; 2026 RakibHQ &bull; The product headquarters of Md. Rakib
+        </p>
         <a
           className="footer-github"
           href="https://github.com/0xmdrakib"
