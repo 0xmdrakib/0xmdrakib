@@ -63,7 +63,7 @@
 <br>
 
 <p>
-  <code>02—03 / SELECTED PRODUCTS</code>
+  <code>Others projects</code>
 </p>
 
 <p>
