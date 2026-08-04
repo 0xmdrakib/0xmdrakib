@@ -23,7 +23,7 @@
 <br>
 
 <p>
-  <code>BUILDER PROFILE</code>
+  <code>01 / BUILDER PROFILE</code>
 </p>
 
 <table>
@@ -51,7 +51,7 @@
 <br>
 
 <p>
-  <code>01 / FLAGSHIP SYSTEM</code>
+  <code>02 / FLAGSHIP SYSTEM</code>
 </p>
 
 <p>
@@ -91,7 +91,7 @@
 <br>
 
 <p>
-  <code>Others projects</code>
+  <code>03 / OTHER PROJECTS</code>
 </p>
 
 <p>
