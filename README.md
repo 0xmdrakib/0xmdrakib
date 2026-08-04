@@ -95,13 +95,13 @@
 </p>
 
 <p>
-  <a href="https://nexoraswap.online">
+  <a href="https://nexoraswap.rakibhq.xyz">
     <img src="./assets/readme/nexoraswap-project.png" alt="NexoraSwap — cross-chain execution console" width="100%">
   </a>
 </p>
 
 <p>
-  <a href="https://nexoraswap.online"><strong>Visit NexoraSwap ↗</strong></a>
+  <a href="https://nexoraswap.rakibhq.xyz"><strong>Visit NexoraSwap ↗</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://github.com/0xmdrakib/NexoraSwap"><strong>View source ↗</strong></a>
 </p>
@@ -109,13 +109,13 @@
 <br>
 
 <p>
-  <a href="https://atlasassistant.online">
+  <a href="https://atlasassistant.rakibhq.xyz">
     <img src="./assets/readme/atlasassistant-project.png" alt="AtlasAssistant — high-signal global news workspace" width="100%">
   </a>
 </p>
 
 <p>
-  <a href="https://atlasassistant.online"><strong>Visit AtlasAssistant ↗</strong></a>
+  <a href="https://atlasassistant.rakibhq.xyz"><strong>Visit AtlasAssistant ↗</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://github.com/0xmdrakib/AtlasAssistant"><strong>View source ↗</strong></a>
 </p>

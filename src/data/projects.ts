@@ -58,7 +58,7 @@ export const projects: Project[] = [
     value:
       "NexoraSwap makes complex swap routing legible by surfacing quotes, fees, balances, route choices, and minimum received before execution.",
     repoUrl: "https://github.com/0xmdrakib/NexoraSwap",
-    liveUrl: "https://nexoraswap.online",
+    liveUrl: "https://nexoraswap.rakibhq.xyz",
     stack: ["Next.js", "Wagmi", "viem", "LI.FI", "Solana", "1inch"],
     capabilities: [
       "Best-route comparison",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     value:
       "AtlasAssistant turns a noisy news cycle into a structured reading flow built around context, signal, and time saved.",
     repoUrl: "https://github.com/0xmdrakib/AtlasAssistant",
-    liveUrl: "https://atlasassistant.online",
+    liveUrl: "https://atlasassistant.rakibhq.xyz",
     stack: ["Next.js", "TypeScript", "Prisma", "AI summaries", "RSS"],
     capabilities: [
       "Focused global feeds",

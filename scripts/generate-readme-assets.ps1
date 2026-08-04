@@ -548,7 +548,7 @@ New-ProjectCard `
   -Tagline "Multi-router execution without the route hunting." `
   -Description "A cross-chain DEX console that compares routes across EVM networks and Solana while keeping quotes, fees, balances, and minimum received visible before execution." `
   -Tags @("Next.js", "Wagmi", "LI.FI") `
-  -Link "NEXORASWAP.ONLINE  /  VISIT PRODUCT" `
+  -Link "NEXORASWAP.RAKIBHQ.XYZ  /  VISIT PRODUCT" `
   -IconPath $nexoraPath
 
 New-ProjectCard `
@@ -559,7 +559,7 @@ New-ProjectCard `
   -Tagline "A calmer interface for understanding the world." `
   -Description "A high-signal global news workspace with focused feeds, AI digests, article summaries, listening mode, and broad language support." `
   -Tags @("Next.js", "Prisma", "AI") `
-  -Link "ATLASASSISTANT.ONLINE  /  VISIT PRODUCT" `
+  -Link "ATLASASSISTANT.RAKIBHQ.XYZ  /  VISIT PRODUCT" `
   -IconPath $atlasPath
 
 # Closing panel
