@@ -201,98 +201,6 @@ function Draw-ImageContain {
   }
 }
 
-function Draw-HeroArtwork {
-  param(
-    [System.Drawing.Graphics]$Graphics,
-    [string]$Path,
-    [System.Drawing.RectangleF]$Rectangle,
-    [float]$SourceInset = 0
-  )
-
-  $image = [System.Drawing.Bitmap]::new($Path)
-  try {
-    $artGraphics = [System.Drawing.Graphics]::FromImage($image)
-    try {
-      $artGraphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
-      $artGraphics.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
-
-      $portal = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(945, 474),
-        [System.Drawing.PointF]::new(1055, 525),
-        [System.Drawing.PointF]::new(1055, 704),
-        [System.Drawing.PointF]::new(945, 653)
-      )
-      $portalCentered = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(945.5, 492.5),
-        [System.Drawing.PointF]::new(1055.5, 543.5),
-        [System.Drawing.PointF]::new(1055.5, 722.5),
-        [System.Drawing.PointF]::new(945.5, 671.5)
-      )
-      $portalInner = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(966, 528.5),
-        [System.Drawing.PointF]::new(1035, 560.5),
-        [System.Drawing.PointF]::new(1035, 686.5),
-        [System.Drawing.PointF]::new(966, 654.5)
-      )
-      $core = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(981.5, 579),
-        [System.Drawing.PointF]::new(1019.5, 597),
-        [System.Drawing.PointF]::new(1019.5, 636),
-        [System.Drawing.PointF]::new(981.5, 618)
-      )
-
-      $inkBrush = [System.Drawing.SolidBrush]::new($colors.Ink)
-      $erasePen = [System.Drawing.Pen]::new($colors.Ink, 4)
-      $artGraphics.FillPolygon($inkBrush, $portal)
-      $artGraphics.DrawPolygon($erasePen, $portal)
-      $erasePen.Dispose()
-      $inkBrush.Dispose()
-
-      $portalBrush = [System.Drawing.SolidBrush]::new($colors.Canvas)
-      $portalPen = [System.Drawing.Pen]::new($colors.Hairline, 1)
-      $artGraphics.FillPolygon($portalBrush, $portalCentered)
-      $artGraphics.DrawPolygon($portalPen, $portalCentered)
-      $portalPen.Dispose()
-      $portalBrush.Dispose()
-
-      $innerBrush = [System.Drawing.SolidBrush]::new($colors.Card)
-      $artGraphics.FillPolygon($innerBrush, $portalInner)
-      $innerBrush.Dispose()
-
-      $coreBrush = [System.Drawing.SolidBrush]::new($colors.Primary)
-      $artGraphics.FillPolygon($coreBrush, $core)
-      $coreBrush.Dispose()
-    }
-    finally {
-      $artGraphics.Dispose()
-    }
-
-    $sourceWidth = [float]($image.Width - ($SourceInset * 2))
-    $sourceHeight = [float]($image.Height - ($SourceInset * 2))
-    $scale = [Math]::Min($Rectangle.Width / $sourceWidth, $Rectangle.Height / $sourceHeight)
-    $width = [float]($sourceWidth * $scale)
-    $height = [float]($sourceHeight * $scale)
-    $x = $Rectangle.X + (($Rectangle.Width - $width) / 2)
-    $y = $Rectangle.Y + (($Rectangle.Height - $height) / 2)
-    $destination = [System.Drawing.RectangleF]::new($x, $y, $width, $height)
-    $source = [System.Drawing.RectangleF]::new(
-      $SourceInset,
-      $SourceInset,
-      $sourceWidth,
-      $sourceHeight
-    )
-    $Graphics.DrawImage(
-      $image,
-      $destination,
-      $source,
-      [System.Drawing.GraphicsUnit]::Pixel
-    )
-  }
-  finally {
-    $image.Dispose()
-  }
-}
-
 function Draw-ImageCover {
   param(
     [System.Drawing.Graphics]$Graphics,
@@ -398,7 +306,7 @@ function Save-ReadmeCanvas {
 $hero = New-ReadmeCanvas -Width 1400 -Height 650 -Background $colors.Canvas
 $g = $hero.Graphics
 
-Draw-HeroArtwork `
+Draw-ImageContain `
   -Graphics $g `
   -Path $artworkPath `
   -Rectangle ([System.Drawing.RectangleF]::new(720, 5, 650, 620)) `

@@ -9,7 +9,8 @@ $assetsBrandDir = Join-Path $repoRoot "assets\brand"
 New-Item -ItemType Directory -Force -Path $brandDir, $assetsBrandDir | Out-Null
 Copy-Item -LiteralPath $sourcePath -Destination (Join-Path $brandDir "rakibhq-logo-master.jpg") -Force
 Copy-Item -LiteralPath $sourcePath -Destination (Join-Path $assetsBrandDir "rakibhq-logo-master.jpg") -Force
-Copy-Item -LiteralPath $heroSourcePath -Destination (Join-Path $brandDir "rakibhq-hero-artwork.png") -Force
+$heroGeneratorPath = Join-Path $PSScriptRoot "generate-hero-artwork-assets.ps1"
+& $heroGeneratorPath -HeroSourcePath $heroSourcePath -BrandDirectory $brandDir | Out-Null
 
 function Export-SquarePng {
     param(
