@@ -177,7 +177,7 @@ function Hero() {
         <h1 id="hero-title">RakibHQ</h1>
         <img
           className="hero-artwork"
-          src="/brand/rakibhq-hero-artwork-optimized.png"
+          src="/brand/rakibhq-hero-artwork-v2.png"
           alt=""
           aria-hidden="true"
         />

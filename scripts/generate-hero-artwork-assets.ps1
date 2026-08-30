@@ -119,7 +119,8 @@ try {
         $optimizedGraphics.Dispose()
       }
 
-      $optimizedPath = Join-Path $BrandDirectory "rakibhq-hero-artwork-optimized.png"
+      $optimized.MakeTransparent($canvasColor)
+      $optimizedPath = Join-Path $BrandDirectory "rakibhq-hero-artwork-v2.png"
       $optimized.Save($optimizedPath, [System.Drawing.Imaging.ImageFormat]::Png)
     }
     finally {
