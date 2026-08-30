@@ -206,8 +206,7 @@ function Draw-HeroArtwork {
     [System.Drawing.Graphics]$Graphics,
     [string]$Path,
     [System.Drawing.RectangleF]$Rectangle,
-    [float]$SourceInset = 0,
-    [float]$PortalYOffset = -24
+    [float]$SourceInset = 0
   )
 
   $image = [System.Drawing.Bitmap]::new($Path)
@@ -223,23 +222,23 @@ function Draw-HeroArtwork {
         [System.Drawing.PointF]::new(1055, 704),
         [System.Drawing.PointF]::new(945, 653)
       )
-      $portalInner = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(966, 510 + $PortalYOffset),
-        [System.Drawing.PointF]::new(1035, 542 + $PortalYOffset),
-        [System.Drawing.PointF]::new(1035, 668 + $PortalYOffset),
-        [System.Drawing.PointF]::new(966, 636 + $PortalYOffset)
+      $portalCentered = [System.Drawing.PointF[]]@(
+        [System.Drawing.PointF]::new(945.5, 492.5),
+        [System.Drawing.PointF]::new(1055.5, 543.5),
+        [System.Drawing.PointF]::new(1055.5, 722.5),
+        [System.Drawing.PointF]::new(945.5, 671.5)
       )
-      $portalShifted = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(945, 474 + $PortalYOffset),
-        [System.Drawing.PointF]::new(1055, 525 + $PortalYOffset),
-        [System.Drawing.PointF]::new(1055, 704 + $PortalYOffset),
-        [System.Drawing.PointF]::new(945, 653 + $PortalYOffset)
+      $portalInner = [System.Drawing.PointF[]]@(
+        [System.Drawing.PointF]::new(966, 528.5),
+        [System.Drawing.PointF]::new(1035, 560.5),
+        [System.Drawing.PointF]::new(1035, 686.5),
+        [System.Drawing.PointF]::new(966, 654.5)
       )
       $core = [System.Drawing.PointF[]]@(
-        [System.Drawing.PointF]::new(986, 572 + $PortalYOffset),
-        [System.Drawing.PointF]::new(1024, 590 + $PortalYOffset),
-        [System.Drawing.PointF]::new(1024, 629 + $PortalYOffset),
-        [System.Drawing.PointF]::new(986, 611 + $PortalYOffset)
+        [System.Drawing.PointF]::new(981.5, 579),
+        [System.Drawing.PointF]::new(1019.5, 597),
+        [System.Drawing.PointF]::new(1019.5, 636),
+        [System.Drawing.PointF]::new(981.5, 618)
       )
 
       $inkBrush = [System.Drawing.SolidBrush]::new($colors.Ink)
@@ -251,8 +250,8 @@ function Draw-HeroArtwork {
 
       $portalBrush = [System.Drawing.SolidBrush]::new($colors.Canvas)
       $portalPen = [System.Drawing.Pen]::new($colors.Hairline, 1)
-      $artGraphics.FillPolygon($portalBrush, $portalShifted)
-      $artGraphics.DrawPolygon($portalPen, $portalShifted)
+      $artGraphics.FillPolygon($portalBrush, $portalCentered)
+      $artGraphics.DrawPolygon($portalPen, $portalCentered)
       $portalPen.Dispose()
       $portalBrush.Dispose()
 
