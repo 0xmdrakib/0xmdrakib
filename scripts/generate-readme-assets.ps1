@@ -164,17 +164,37 @@ function Draw-ImageContain {
   param(
     [System.Drawing.Graphics]$Graphics,
     [string]$Path,
-    [System.Drawing.RectangleF]$Rectangle
+    [System.Drawing.RectangleF]$Rectangle,
+    [float]$SourceInset = 0
   )
 
   $image = [System.Drawing.Image]::FromFile($Path)
   try {
-    $scale = [Math]::Min($Rectangle.Width / $image.Width, $Rectangle.Height / $image.Height)
-    $width = [float]($image.Width * $scale)
-    $height = [float]($image.Height * $scale)
+    $sourceWidth = [float]($image.Width - ($SourceInset * 2))
+    $sourceHeight = [float]($image.Height - ($SourceInset * 2))
+    $scale = [Math]::Min($Rectangle.Width / $sourceWidth, $Rectangle.Height / $sourceHeight)
+    $width = [float]($sourceWidth * $scale)
+    $height = [float]($sourceHeight * $scale)
     $x = $Rectangle.X + (($Rectangle.Width - $width) / 2)
     $y = $Rectangle.Y + (($Rectangle.Height - $height) / 2)
-    $Graphics.DrawImage($image, $x, $y, $width, $height)
+    if ($SourceInset -le 0) {
+      $Graphics.DrawImage($image, $x, $y, $width, $height)
+    }
+    else {
+      $destination = [System.Drawing.RectangleF]::new($x, $y, $width, $height)
+      $source = [System.Drawing.RectangleF]::new(
+        $SourceInset,
+        $SourceInset,
+        $sourceWidth,
+        $sourceHeight
+      )
+      $Graphics.DrawImage(
+        $image,
+        $destination,
+        $source,
+        [System.Drawing.GraphicsUnit]::Pixel
+      )
+    }
   }
   finally {
     $image.Dispose()
@@ -286,6 +306,12 @@ function Save-ReadmeCanvas {
 $hero = New-ReadmeCanvas -Width 1400 -Height 650 -Background $colors.Canvas
 $g = $hero.Graphics
 
+Draw-ImageContain `
+  -Graphics $g `
+  -Path $artworkPath `
+  -Rectangle ([System.Drawing.RectangleF]::new(720, 5, 650, 620)) `
+  -SourceInset 4
+
 Draw-Brand -Graphics $g -X 64 -Y 48
 
 $mono = New-MonoFont -Size 15
@@ -337,11 +363,6 @@ Draw-Text `
   -Color $colors.Ink `
   -Rectangle ([System.Drawing.RectangleF]::new(64, 542, 650, 36))
 $linkFont.Dispose()
-
-Draw-ImageContain `
-  -Graphics $g `
-  -Path $artworkPath `
-  -Rectangle ([System.Drawing.RectangleF]::new(755, 25, 650, 620))
 
 Save-ReadmeCanvas -Canvas $hero -FileName "rakibhq-profile-hero.png"
 
