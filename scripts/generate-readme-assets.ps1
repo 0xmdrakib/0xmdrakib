@@ -165,7 +165,8 @@ function Draw-ImageContain {
     [System.Drawing.Graphics]$Graphics,
     [string]$Path,
     [System.Drawing.RectangleF]$Rectangle,
-    [float]$SourceInset = 0
+    [float]$SourceInset = 0,
+    [System.Drawing.Color]$EdgeColor = [System.Drawing.Color]::Empty
   )
 
   $image = [System.Drawing.Image]::FromFile($Path)
@@ -194,6 +195,21 @@ function Draw-ImageContain {
         $source,
         [System.Drawing.GraphicsUnit]::Pixel
       )
+    }
+
+    if ($EdgeColor.A -gt 0) {
+      $edgeBrush = [System.Drawing.SolidBrush]::new($EdgeColor)
+      try {
+        # Cover the resampled image boundary without touching the artwork,
+        # which sits safely inside the source canvas.
+        $Graphics.FillRectangle($edgeBrush, $x - 1, $y - 1, $width + 2, 2)
+        $Graphics.FillRectangle($edgeBrush, $x - 1, $y + $height - 1, $width + 2, 2)
+        $Graphics.FillRectangle($edgeBrush, $x - 1, $y - 1, 2, $height + 2)
+        $Graphics.FillRectangle($edgeBrush, $x + $width - 1, $y - 1, 2, $height + 2)
+      }
+      finally {
+        $edgeBrush.Dispose()
+      }
     }
   }
   finally {
@@ -610,6 +626,8 @@ $closingMono.Dispose()
 Draw-ImageContain `
   -Graphics $g `
   -Path $artworkPath `
-  -Rectangle ([System.Drawing.RectangleF]::new(1030, 12, 350, 280))
+  -Rectangle ([System.Drawing.RectangleF]::new(1030, 12, 350, 280)) `
+  -SourceInset 4 `
+  -EdgeColor $colors.Canvas
 
 Save-ReadmeCanvas -Canvas $closing -FileName "rakibhq-profile-footer.png"
