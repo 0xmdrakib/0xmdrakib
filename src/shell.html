@@ -1,0 +1,37 @@
+<!-- Compact navigation icons use Lucide's ISC-licensed UserRound, Building2 and Mail paths. -->
+<nav id="nav" class="site-header" aria-label="Main navigation">
+  <a class="logo" data-personal-ui href="/" aria-label="Md. Rakib home"><img class="logo-mark" src="/personal/logo.png" alt="" width="26" height="26"><span>Md. Rakib</span></a>
+  <a class="brand" data-hq-ui href="#top" aria-label="RakibHQ home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="/brand/rakibhq-logo-64.png" alt="" width="30" height="30" />
+          </span>
+          <span class="brand-word">RakibHQ</span>
+        </a>
+  <div class="site-switcher" role="group" aria-label="Website sections">
+    <span class="site-switcher-indicator" aria-hidden="true"></span>
+    <a href="/" aria-label="Personal" title="Personal" %PERSONAL_CURRENT%>
+      <svg class="site-tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+      <span class="site-tab-label">Personal</span>
+    </a>
+    <a href="/hq/" aria-label="RakibHQ" title="RakibHQ" %HQ_CURRENT%>
+      <svg class="site-tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2M10 6h4M10 10h4M10 14h4M10 18h4"/></svg>
+      <span class="site-tab-label">RakibHQ</span>
+    </a>
+  </div>
+  <a class="nav-cta" data-personal-ui href="#contact" aria-label="Contact me" title="Contact me"><span class="nav-cta-label">Contact Me</span><svg class="nav-contact-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+  <a class="header-github" data-hq-ui href="https://github.com/0xmdrakib" target="_blank" rel="noreferrer" aria-label="Open Md. Rakib's GitHub profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/></svg>
+          <span>0xmdrakib</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+</nav>
+<div id="personal-page" data-site-panel="personal" %PERSONAL_HIDDEN%>
+%PERSONAL_PAGE%
+</div>
+<div id="hq-page" data-site-panel="hq" %HQ_HIDDEN%>
+  <div id="root">
+    <a class="skip-link" href="#ecosystem">Skip to projects</a>
+    <div id="hq-content"></div>
+  </div>
+</div>
+<div class="route-announcement" aria-live="polite" aria-atomic="true"></div>

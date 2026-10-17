@@ -1,0 +1,440 @@
+/* The two sites share navigation while retaining their own visual identity. */
+html[data-site] {
+  scrollbar-gutter: stable;
+  --nav-h: 72px;
+  --site-tab-border: #dedbd1;
+  --site-tab-background: #efede5;
+  --site-tab-muted: #69665c;
+  --site-tab-active: #26251e;
+}
+
+[hidden] { display: none !important; }
+html[data-site="personal"] [data-hq-ui],
+html[data-site="hq"] [data-personal-ui] { display: none !important; }
+
+/* One persistent navigation bar serves both cached views. */
+#nav.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; }
+#hq-page { padding-top: var(--nav-h); }
+html[data-site="hq"] #root { min-height: calc(100svh - var(--nav-h)); }
+.route-announcement {
+  position: absolute; width: 1px; height: 1px;
+  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+.site-switcher {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 0 0 auto;
+  align-items: center;
+  box-sizing: border-box;
+  width: 176px;
+  height: 48px;
+  min-width: 0;
+  padding: 3px;
+  gap: 3px;
+  border: 1px solid var(--site-tab-border, #dedbd1);
+  border-radius: 999px;
+  background: var(--site-tab-background, #efede5);
+  font-family: "Segoe UI", sans-serif;
+  font-synthesis: none;
+  isolation: isolate;
+  view-transition-name: site-switcher;
+}
+
+.site-switcher-indicator {
+  position: absolute;
+  inset: 3px auto 3px 3px;
+  width: calc((100% - 9px) / 2);
+  border-radius: inherit;
+  background: var(--site-tab-active, #26251e);
+  pointer-events: none;
+  view-transition-name: site-switcher-active;
+}
+
+html[data-site="hq"] .site-switcher-indicator {
+  left: calc(50% + 1.5px);
+}
+
+.site-switcher a {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  color: var(--site-tab-muted, #69665c);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-switcher a:first-of-type { view-transition-name: site-switcher-personal; }
+.site-switcher a:last-of-type { view-transition-name: site-switcher-hq; }
+
+.site-switcher a:hover {
+  color: var(--ink, #26251e);
+  background: rgb(255 255 255 / 50%);
+}
+
+.site-switcher a[aria-current="page"] {
+  color: #fff;
+  background: transparent;
+}
+
+.site-switcher a:focus-visible {
+  outline: 2px solid var(--site-tab-focus, #8d6b28);
+  outline-offset: 3px;
+}
+
+.site-tab-icon, .nav-contact-icon { display: none; }
+#nav .logo, #nav .brand { white-space: nowrap; }
+#nav a { -webkit-tap-highlight-color: transparent; }
+#nav .nav-cta:focus-visible, #nav .header-github:focus-visible {
+  outline: 2px solid var(--site-tab-focus, #8d6b28);
+  outline-offset: 4px;
+}
+
+html[data-site="personal"] {
+  --site-tab-border: rgba(184, 137, 44, .24);
+  --site-tab-background: #f3ead8;
+  --site-tab-muted: #7a6848;
+  --site-tab-active: #3d3020;
+}
+
+html[data-site="personal"] #nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 18px;
+}
+
+html[data-site="personal"] #nav .logo {
+  grid-column: 1;
+  justify-self: start;
+}
+
+html[data-site="personal"] #nav .site-switcher {
+  grid-column: 2;
+  justify-self: center;
+}
+
+html[data-site="personal"] #nav .nav-cta {
+  grid-column: 3;
+  justify-self: end;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[data-site="hq"] {
+  overflow-x: visible;
+  scroll-padding-top: 88px;
+}
+
+/* The static HQ header and React content share the original flex shell. */
+#hq-content { display: contents; }
+
+html[data-site="hq"] .site-header {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 20px;
+  height: 72px;
+  border-bottom: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: background-color 400ms ease, box-shadow 400ms ease;
+}
+
+html[data-site="hq"] .site-header.scrolled {
+  background: rgba(247, 247, 244, .94);
+  box-shadow: inset 0 -1px 0 var(--hairline);
+  backdrop-filter: blur(14px);
+}
+
+html[data-site="hq"] .site-header > .brand {
+  grid-column: 1;
+}
+
+html[data-site="hq"] .site-header > .site-switcher {
+  grid-column: 2;
+  justify-self: center;
+}
+
+html[data-site="hq"] .site-header > .header-github {
+  grid-column: 3;
+}
+
+/* One detailed solar system; stronger in its own panel, softer behind copy. */
+html[data-site="personal"] .hero-right { container-type: size; }
+html[data-site="personal"] .orrery {
+  --orbit-size: min(43vw, 72svh, 640px);
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  aspect-ratio: 1;
+}
+html[data-site="personal"] .solar-etching { display: block; width: 100%; height: 100%; }
+html[data-site="personal"] .solar-revolve {
+  transform-box: view-box;
+  transform-origin: center;
+  transform: rotate(var(--orbit-phase));
+  animation: solar-revolution var(--orbit-period) linear infinite;
+}
+html[data-site="personal"] .solar-corona {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: solar-breathe 9s ease-in-out infinite;
+}
+@media (min-width: 981px) {
+  html[data-site="personal"] .hero-right .hgrid { opacity: .55; }
+  html[data-site="personal"] .hero-right .hconst { opacity: .45; }
+}
+
+/* Keep the solar system centered and circular within the hero's available space. */
+@media (max-width: 980px) {
+  html[data-site="personal"] .hero { display: block; }
+  html[data-site="personal"] .hero-left {
+    min-height: 100svh;
+    padding-top: calc(var(--nav-h) + clamp(24px, 4svh, 48px));
+    padding-bottom: clamp(28px, 5svh, 56px);
+  }
+  html[data-site="personal"] .hero-right {
+    position: absolute;
+    inset: var(--nav-h) 0 0;
+    min-height: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    overflow: clip;
+    pointer-events: none;
+    opacity: .82;
+    z-index: 1;
+    container-type: size;
+    mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent);
+  }
+  html[data-site="personal"] .hero-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: radial-gradient(ellipse at center, rgba(250,246,237,.64), rgba(250,246,237,.58) 28%, rgba(250,246,237,.28) 58%, transparent 84%);
+    pointer-events: none;
+  }
+  html[data-site="personal"] .hero-right .hgrid,
+  html[data-site="personal"] .hero-right .hcross,
+  html[data-site="personal"] .hero-right .hconst { display: none; }
+  html[data-site="personal"] .orrery {
+    --orbit-size: min(88vw, 72svh, 760px);
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+  }
+  html[data-site="personal"] .solar-revolve { opacity: .68; }
+  html[data-site="personal"] .hero-desc,
+  html[data-site="personal"] .tagline { color: #584832; text-shadow: 0 0 2px #faf6ed, 0 1px 10px rgba(250,246,237,.9); }
+  html[data-site="personal"] h1.hero-h { text-shadow: 0 2px 18px rgba(250,246,237,.92); }
+}
+
+@supports (width: 1cqi) {
+  html[data-site="personal"] .orrery { --orbit-size: min(86cqi, 72cqb, 640px); }
+  @media (max-width: 980px) {
+    html[data-site="personal"] .orrery { --orbit-size: min(calc(100cqi - 24px), calc(100cqb - 24px), 760px); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-site="personal"] .solar-revolve,
+  html[data-site="personal"] .solar-corona { animation: none; }
+}
+
+@keyframes solar-revolution {
+  from { transform: rotate(var(--orbit-phase)); }
+  to { transform: rotate(calc(var(--orbit-phase) + 360deg)); }
+}
+
+@keyframes solar-breathe {
+  0%, 100% { transform: scale(.98); opacity: .7; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  html[data-site="personal"], html[data-site="hq"] {
+    --nav-h: 64px;
+  }
+
+  html[data-site="personal"] #nav,
+  html[data-site="hq"] .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 44px;
+    grid-template-rows: 64px;
+    height: 64px;
+    gap: 8px;
+    padding: 0;
+    padding-left: max(clamp(16px, 4vw, 28px), env(safe-area-inset-left));
+    padding-right: max(clamp(16px, 4vw, 28px), env(safe-area-inset-right));
+    border-bottom: 0;
+  }
+
+  html[data-site="personal"] #nav {
+    background: rgba(250, 246, 237, .97);
+    box-shadow: inset 0 -1px 0 var(--border);
+  }
+
+  html[data-site="hq"] .site-header {
+    background: rgba(247, 247, 244, .97);
+    box-shadow: inset 0 -1px 0 var(--hairline);
+  }
+
+  html[data-site="personal"] #nav .logo,
+  html[data-site="hq"] .site-header > .brand {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  html[data-site="personal"] #nav .nav-cta {
+    grid-column: 3;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    color: var(--ink2);
+    background: transparent;
+    justify-self: end;
+  }
+
+  /* The visible controls are 36px; their transparent touch targets stay 44px. */
+  html[data-site="personal"] #nav .nav-cta::before,
+  html[data-site="hq"] #nav .header-github::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border: 1px solid var(--site-tab-border);
+    border-radius: 10px;
+    background: var(--bg, var(--card));
+    transform: none;
+    pointer-events: none;
+  }
+
+  #nav .site-tab-label, #nav .nav-cta-label { display: none; }
+  #nav .site-tab-icon, #nav .nav-contact-icon { display: block; width: 17px; height: 17px; flex-shrink: 0; }
+  #nav .nav-contact-icon { position: relative; z-index: 1; }
+
+  html[data-site="personal"] #nav .site-switcher,
+  html[data-site="hq"] .site-header > .site-switcher {
+    grid-column: 2;
+    grid-row: 1;
+    width: 88px;
+    height: 44px;
+    padding: 0;
+    gap: 0;
+    border: 0;
+    background: transparent;
+    justify-self: center;
+  }
+
+  #nav .site-switcher::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    box-sizing: border-box;
+    border: 1px solid var(--site-tab-border);
+    border-radius: inherit;
+    background: var(--site-tab-background);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  #nav .site-switcher-indicator { inset: 4px auto 4px 4px; width: 36px; border-radius: 50%; }
+  html[data-site="hq"] #nav .site-switcher-indicator { left: 48px; }
+  #nav .site-switcher a { display: grid; place-items: center; height: 44px; padding: 0; }
+  #nav .site-switcher a:hover { background: transparent; }
+
+  html[data-site="hq"] {
+    scroll-padding-top: 80px;
+  }
+
+  html[data-site="hq"] .site-header > .header-github {
+    display: inline-flex;
+    grid-column: 3;
+    grid-row: 1;
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+  }
+
+  html[data-site="hq"] #nav .header-github > svg:first-child { position: relative; z-index: 1; }
+
+  html[data-site="hq"] .header-github span,
+  html[data-site="hq"] .header-github > svg:last-child {
+    display: none;
+  }
+
+}
+
+@media (max-width: 420px) {
+  html[data-site="personal"] #nav .logo { font-size: 14px; letter-spacing: .02em; gap: 8px; }
+  html[data-site="hq"] #nav .brand { font-size: 13px; }
+  html[data-site="hq"] #nav .brand-mark { width: 24px; height: 24px; }
+  html[data-site="hq"] #nav .brand-word { margin-left: 8px; }
+}
+
+@media (max-width: 359px) {
+  html[data-site="personal"] #nav, html[data-site="hq"] #nav { padding-inline: 12px; }
+}
+
+/* Returning to Personal must not replay delayed, initially transparent content. */
+html[data-site="personal"].site-switch-arrival .hero-copy > *,
+html[data-site="personal"].site-switch-arrival .scroll-hint {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* Keep the outgoing snapshot opaque until the incoming page has covered it. */
+::view-transition-group(*) {
+  animation-duration: 160ms;
+  animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+}
+
+::view-transition-old(*) {
+  animation: none;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(*) {
+  animation: site-soft-reveal 160ms cubic-bezier(.2, .8, .2, 1) both;
+  mix-blend-mode: normal;
+}
+
+@keyframes site-soft-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+::view-transition { pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .site-switcher a {
+    transition: none;
+  }
+
+  html[data-site="hq"] .site-header { transition: none; }
+}

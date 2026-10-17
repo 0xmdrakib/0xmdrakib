@@ -1,11 +1,11 @@
 {
-  "name": "RakibHQ",
-  "short_name": "RakibHQ",
-  "description": "The product headquarters of Md. Rakib.",
+  "name": "Md. Rakib",
+  "short_name": "Md. Rakib",
+  "description": "Md. Rakib's personal website and RakibHQ product headquarters.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7f7f4",
-  "theme_color": "#f54e00",
+  "background_color": "#faf6ed",
+  "theme_color": "#b8892c",
   "icons": [
     {
       "src": "/brand/rakibhq-logo-192.png",

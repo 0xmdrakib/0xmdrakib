@@ -1,10 +1,25 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "rakibhq.xyz" }],
+      "destination": "https://mdrakib.xyz/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.rakibhq.xyz" }],
+      "destination": "https://mdrakib.xyz/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/hq/",
+      "destination": "/hq/index.html"
     }
   ]
 }

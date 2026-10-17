@@ -26,12 +26,12 @@ export const projects: Project[] = [
     category: "Agent Infrastructure",
     status: "Flagship",
     index: "01",
-    tagline: "Identity infrastructure for the agentic internet.",
+    tagline: "Agent-native identity and communications infrastructure",
     description:
       "A complete identity stack that gives autonomous agents a domain, DNS, email, SSL, onchain names, an AgentID NFT, and renewal automation through one registration flow.",
     value:
       "AgentDomain replaces a fragmented, manual setup process with one programmable identity layer that agents can own and operate.",
-    repoUrl: "https://github.com/0xmdrakib/AgentDomain",
+    repoUrl: "https://github.com/Talvono/AgentDomain",
     liveUrl: "https://agentdomain.app",
     stack: ["Next.js", "TypeScript", "Base", "ENS", "x402", "MCP"],
     capabilities: [

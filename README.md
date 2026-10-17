@@ -85,7 +85,7 @@
 <p>
   <a href="https://agentdomain.app"><strong>Visit AgentDomain ↗</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/0xmdrakib/AgentDomain"><strong>View source ↗</strong></a>
+  <a href="https://github.com/Talvono/AgentDomain"><strong>View source ↗</strong></a>
 </p>
 
 <br>
